@@ -48,24 +48,42 @@
                             <div class="card card-plain mt-8">
                                 <div class="card-header pb-0 text-left bg-transparent">
                                     <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
-                                    <p class="mb-0">Enter your email and password to sign in</p>
+                                    <!-- <p class="mb-0">Enter your email and password to sign in</p> -->
+                                    <?= view('Myth\Auth\Views\_message_block') ?>
                                 </div>
                                 <div class="card-body">
-                                    <form role="form">
-                                        <label>Email</label>
+                                    <form role="form" action="<?= url_to('login') ?>" method="post">
+                                        <?= csrf_field() ?>
+
+                                        <?php if ($config->validFields === ['email']) : ?>
+                                            <label for="emails"><?= lang('Auth.email') ?></label>
+                                            <div class="mb-3">
+                                                <input id="emails" type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>" aria-label="Email" aria-describedby="email-addon">
+                                                <?= session('errors.login') ?>
+                                            </div>
+                                        <?php else : ?>
+                                            <label for="emails"><?= lang('Auth.emailOrUsername') ?></label>
+                                            <div class="mb-3">
+                                                <input id="emails" type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>" aria-label="Email" aria-describedby="email-addon">
+                                                <?= session('errors.login') ?>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <label for="pass"><?= lang('Auth.password') ?></label>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                            <input id="pass" type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" aria-label="Password" aria-describedby="password-addon">
+                                            <?= session('errors.password') ?>
                                         </div>
-                                        <label>Password</label>
-                                        <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                                            <label class="form-check-label" for="rememberMe">Remember me</label>
-                                        </div>
+
+                                        <?php if ($config->allowRemembering) : ?>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" name="remember" type="checkbox" id="rememberMe" <?php if (old('remember')) : ?> checked <?php endif ?>>
+                                                <label class="form-check-label" for="rememberMe"><?= lang('Auth.rememberMe') ?></label>
+                                            </div>
+                                        <?php endif; ?>
+
                                         <div class="text-center">
-                                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                                            <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
                                         </div>
                                     </form>
                                 </div>
