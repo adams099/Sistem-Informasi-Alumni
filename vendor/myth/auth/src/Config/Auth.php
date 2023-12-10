@@ -318,7 +318,7 @@ class Auth extends BaseConfig
      *
      * @var int
      */
-    public $minimumPasswordLength = 8;
+    public $minimumPasswordLength = 5;
 
     /**
      * --------------------------------------------------------------------
@@ -335,7 +335,7 @@ class Auth extends BaseConfig
      */
     public $passwordValidators = [
         'Myth\Auth\Authentication\Passwords\CompositionValidator',
-        'Myth\Auth\Authentication\Passwords\NothingPersonalValidator',
+        // 'Myth\Auth\Authentication\Passwords\NothingPersonalValidator',
         'Myth\Auth\Authentication\Passwords\DictionaryValidator',
         // 'Myth\Auth\Authentication\Passwords\PwnedValidator',
     ];
