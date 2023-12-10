@@ -53,7 +53,7 @@
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
-                                                <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user2">
+                                                <img src="../assets/img/default.jpg" class="avatar avatar-sm me-3" alt="user2">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="mb-0 text-sm">Alexa Liras</h6>
@@ -109,7 +109,7 @@
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
-                                                <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user4">
+                                                <img src="../assets/img/default.jpg" class="avatar avatar-sm me-3" alt="user4">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="mb-0 text-sm">Michael Levi</h6>

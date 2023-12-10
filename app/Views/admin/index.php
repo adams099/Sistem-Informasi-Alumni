@@ -1,1 +1,1 @@
-<?= $this->include('./dashboard'); ?> 
+<?= $this->include('./layout/template'); ?>

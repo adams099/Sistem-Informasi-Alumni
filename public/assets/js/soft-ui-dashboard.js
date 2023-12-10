@@ -249,6 +249,7 @@ function sidebarColor(a) {
 }
 
 // Set Navbar Fixed
+var el = false;
 function navbarFixed(el) {
   let classes = ['position-sticky', 'blur', 'shadow-blur', 'mt-4', 'left-auto', 'top-1', 'z-index-sticky'];
   const navbar = document.getElementById('navbarBlur');
