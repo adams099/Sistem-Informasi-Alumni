@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url(); ?>../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="<?= base_url(); ?>../assets/img/favicon.png">
     <title>
-        Soft UI Dashboard by Creative Tim
+        Sistem Informasi Alumni
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -170,7 +170,7 @@
                         <p class="mb-0 text-secondary">
                             Copyright © <script>
                                 document.write(new Date().getFullYear())
-                            </script> Soft by Creative Tim.
+                            </script> Galih | Mega
                         </p>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url(); ?>../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="<?= base_url(); ?>../assets/img/favicon.png">
     <title>
-        Soft UI Dashboard by Creative Tim
+        Sistem Informasi Alumni
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -110,36 +110,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mb-4 mx-auto text-center">
-                    <a href="<?= base_url(); ?>;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                    <a href="<?= base_url(); ?>#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
                         Company
                     </a>
-                    <a href="<?= base_url(); ?>;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                    <a href="<?= base_url(); ?>#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
                         About Us
                     </a>
-                    <a href="<?= base_url(); ?>;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                    <a href="<?= base_url(); ?>#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
                         Team
                     </a>
-                    <a href="<?= base_url(); ?>;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                    <a href="<?= base_url(); ?>#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
                         Products
                     </a>
-                    <a href="<?= base_url(); ?>;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                    <a href="<?= base_url(); ?>#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
                         Blog
                     </a>
                 </div>
                 <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
-                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                    <a href="#" target="_blank" class="text-secondary me-xl-4 me-4">
                         <span class="text-lg fab fa-dribbble"></span>
                     </a>
-                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                    <a href="#" target="_blank" class="text-secondary me-xl-4 me-4">
                         <span class="text-lg fab fa-twitter"></span>
                     </a>
-                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                    <a href="#" target="_blank" class="text-secondary me-xl-4 me-4">
                         <span class="text-lg fab fa-instagram"></span>
                     </a>
-                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                    <a href="#" target="_blank" class="text-secondary me-xl-4 me-4">
                         <span class="text-lg fab fa-pinterest"></span>
                     </a>
-                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                    <a href="#" target="_blank" class="text-secondary me-xl-4 me-4">
                         <span class="text-lg fab fa-github"></span>
                     </a>
                 </div>
@@ -149,7 +149,7 @@
                     <p class="mb-0 text-secondary">
                         Copyright © <script>
                             document.write(new Date().getFullYear())
-                        </script> galih.
+                        </script> Galih | Mega
                     </p>
                 </div>
             </div>
