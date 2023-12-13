@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url(); ?>../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="<?= base_url(); ?>../assets/img/favicon.png">
     <title>
-        Sistem Informasi Alumni
+        Soft UI Dashboard by Creative Tim
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -22,6 +22,11 @@
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
+    <!-- <link id="pagestyle" href="<?= base_url(); ?>../assets/css/bootstrap.css" rel="stylesheet" /> -->
+    <?php if ($breadcrumb == 'Form') : ?>
+        <link href="<?= base_url(); ?>../assets/css/form.css" rel="stylesheet" />
+    <?php endif; ?>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -109,6 +114,7 @@
     <!--   Core JS Files   -->
     <script src="<?= base_url(); ?>../assets/js/core/popper.min.js"></script>
     <script src="<?= base_url(); ?>../assets/js/core/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>../assets/js/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="<?= base_url(); ?>../assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="<?= base_url(); ?>../assets/js/plugins/chartjs.min.js"></script>
@@ -283,7 +289,6 @@
         });
     </script>
     <script>
-        navbarFixed(true);
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
             var options = {
@@ -296,6 +301,12 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?= base_url(); ?>../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+    <script type="text/javascript" src="<?= base_url('../assets/js/jquery.js'); ?>"></script>
+
+    <?php if ($breadcrumb == 'Form') : ?>
+        <script type="text/javascript" src="<?= base_url('../assets/js/form.js'); ?>"></script>
+    <?php endif; ?>
+
 </body>
 
 </html>

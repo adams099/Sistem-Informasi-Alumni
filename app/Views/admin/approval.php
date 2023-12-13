@@ -2,5 +2,5 @@
 
 <?= $this->section('content'); ?>
 <div class="mt-5"></div>
-<?= print_r($alumni); ?>
+<?= print_r($approval); ?>
 <?= $this->endSection('content'); ?>
