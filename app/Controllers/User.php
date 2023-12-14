@@ -11,6 +11,8 @@ class User extends BaseController
     {
         $this->alumniModel = new AlumniModel();
         $this->approvModel = new ApprovalModel();
+        $this->status = $this->alumniModel->findStatus();
+        $this->alumni = $this->alumniModel->findAlumni();
     }
 
     public function index()
@@ -18,7 +20,9 @@ class User extends BaseController
         $data = [
             "currentRoute" => 'List of Alumni',
             "breadcrumb" => 'Alumni',
-            "alumni" => $this->alumniModel->findAll(),
+            "alumniData" => $this->alumniModel->findAll(),
+            "status" => $this->status,
+            "alumni" => $this->alumni,
         ];
         return view('user/alumni', $data);
     }
@@ -26,8 +30,10 @@ class User extends BaseController
     public function form()
     {
         $data = [
-            "currentRoute" => 'Bio Data',
+            "currentRoute" => 'Biodata',
             "breadcrumb" => 'Form',
+            "status" => $this->status,
+            "alumni" => $this->alumni,
         ];
         return view('user/form', $data);
     }

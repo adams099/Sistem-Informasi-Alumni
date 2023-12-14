@@ -26,4 +26,22 @@ class AlumniModel extends Model
         'pencapaian_karir',
         'ipk',
     ];
+
+    public function findAlumni()
+    {
+        $useridStatus = ['user_id' => user_id()];
+        $result = $this->where($useridStatus)->get()->getRow();
+
+
+        return ($result !== null);
+    }
+
+    public function findStatus()
+    {
+        $useridStatus = ['status' => 'Approved'];
+        $result = $this->where($useridStatus)->get()->getRow();
+
+
+        return ($result !== null);
+    }
 }
