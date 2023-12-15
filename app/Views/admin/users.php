@@ -1,8 +1,6 @@
 <?= $this->extend('./layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- dd($users); -->
-
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">

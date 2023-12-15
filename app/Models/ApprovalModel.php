@@ -15,4 +15,22 @@ class ApprovalModel extends Model
         'id_user',
         'id_alumni',
     ];
+
+    public function getAllApprov()
+    {
+        $this->select('nama, approved_by, req_by, approval.created_at, approval.updated_at, approval.status');
+        $this->join('alumni', 'alumni.id = approval.id_alumni');
+        $query = $this->get()->getResult();
+
+        return $query;
+    }
+
+    public function countNeedApprove()
+    {
+        $builder = $this;
+        $builder->where('status', 'Need Approve');
+        $query = $builder->countAllResults();
+
+        return $query;
+    }
 }

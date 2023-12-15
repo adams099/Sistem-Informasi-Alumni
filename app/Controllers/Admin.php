@@ -13,14 +13,6 @@ class Admin extends BaseController
         $this->approvModel = new ApprovalModel();
     }
 
-    public function index()
-    {
-        $data = [
-            "currentRoute" => 'dashboard',
-        ];
-        return view('admin/index', $data);
-    }
-
     public function users()
     {
         $data = [
@@ -36,7 +28,7 @@ class Admin extends BaseController
         $data = [
             "currentRoute" => 'Approval',
             "breadcrumb" => 'Approval',
-            "approval" => $this->approvModel->findAll(),
+            "approval" => $this->approvModel->getAllApprov(),
         ];
         return view('admin/approval', $data);
     }

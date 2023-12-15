@@ -11,7 +11,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Alumni</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    0
+                                    <?= $countAlumni; ?>
                                     <!-- <span class="text-success text-sm font-weight-bolder">+55%</span> -->
                                 </h5>
                             </div>
@@ -33,7 +33,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Need Approve</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    0
+                                    <?= $countNeedApprove; ?>
                                 </h5>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Administrator</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    0
+                                    <?= $countAdmin; ?>
                                     <!-- <span class="text-danger text-sm font-weight-bolder">-2%</span> -->
                                 </h5>
                             </div>
@@ -76,7 +76,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">General User</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    0
+                                    <?= $countUser; ?>
                                 </h5>
                             </div>
                         </div>

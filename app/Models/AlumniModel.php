@@ -44,4 +44,26 @@ class AlumniModel extends Model
 
         return ($result !== null);
     }
+
+    public function countAlumniApproved()
+    {
+        $builder = $this;
+        $builder->where('status', 'Approved');
+        $query = $builder->countAllResults();
+
+        return $query;
+    }
+    public function countCumlaude()
+    {
+        $whereArr = [
+            'status' => 'Approved',
+            'ipk >=' => 3.5,
+        ];
+
+        $builder = $this;
+        $builder->where($whereArr);
+        $query = $builder->countAllResults();
+
+        return $query;
+    }
 }
