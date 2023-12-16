@@ -60,7 +60,9 @@
                                             <input name="tempat_lahir" type="text" required class="form-control" placeholder="Tempat Lahir">
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn bg-gradient-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -108,8 +110,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                                    <button class="btn bg-gradient-primary prevBtn btn-lg pull-left" type="button">Previous</button>
+                                    <button class="btn bg-gradient-primary nextBtn btn-lg pull-right" type="button">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -137,8 +139,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                                    <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+                                    <button class="btn bg-gradient-primary prevBtn btn-lg pull-left" type="button">Previous</button>
+                                    <button class="btn bg-gradient-success btn-lg pull-right" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>

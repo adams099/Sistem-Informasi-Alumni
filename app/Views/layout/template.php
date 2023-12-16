@@ -307,6 +307,28 @@
         <script type="text/javascript" src="<?= base_url('../assets/js/form.js'); ?>"></script>
     <?php endif; ?>
 
+    <?php if ($breadcrumb == 'Users') : ?>
+        <script>
+            $(document).ready(function() {
+                // get Edit Product
+                $('.btn-edit').on('click', function() {
+                    // get data from button edit
+                    const id = $(this).data('id');
+                    const group = $(this).data('group_id');
+                    // Set data to Form Edit
+                    $('.user_id').val(id);
+                    $('.auth_group').val(group).trigger('change');
+                    // Call Modal Edit
+                    $('#editModal').modal('show');
+                });
+
+                $('.close-modal').on('click', function() {
+                    $('#editModal').modal('hide');
+                });
+            });
+        </script>
+    <?php endif; ?>
+
 </body>
 
 </html>

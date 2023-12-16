@@ -8,11 +8,14 @@ class UserModel extends Model
 {
     protected $table = 'users';
     protected $useTimestamps = true;
+    protected $allowedFields = [
+        'status_message',
+    ];
 
     public function getUsers()
     {
         $builder = $this;
-        $builder->select('group_id as role, email, username, created_at, updated_at, user_image');
+        $builder->select('users.id, group_id as role, email, username, created_at, updated_at, user_image');
         $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $query = $builder->get()->getResult();
 

@@ -26,7 +26,7 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div>
-                                                    <img src="<?= base_url(); ?>../assets/img/user_image/<?= $users->user_image; ?>" class="avatar avatar-sm me-3" alt="imageUser">
+                                                    <img src="<?= base_url(); ?>../assets/img/user_image/default.jpg" class="avatar avatar-sm me-3" alt="imageUser">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm"><?= $users->username; ?></h6>
@@ -47,10 +47,9 @@
                                             <?php else : ?>
                                                 <span class="badge badge-sm bg-gradient-secondary">User</span>
                                             <?php endif; ?>
-
                                         </td>
                                         <td class="align-middle">
-                                            <a href="#" class="text-secondary font-weight-bold text-xs">
+                                            <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $users->id; ?>" data-group_id="<?= $users->role; ?>">
                                                 Edit
                                             </a>
                                         </td>
@@ -64,4 +63,37 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Edit Product-->
+<form action="/admin/users/update" method="post">
+    <?= csrf_field(); ?>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change User Role</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select name="auth_group" class="form-control auth_group">
+                            <option disabled>-Select-</option>
+                            <?php foreach ($group as $row) : ?>
+                                <option value="<?= $row->id; ?>"><?= $row->description; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="user_id" class="user_id">
+                    <button type="button" class="btn btn-secondary close-modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- End Modal Edit Product-->
 <?= $this->endSection('content'); ?>

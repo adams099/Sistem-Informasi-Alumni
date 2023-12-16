@@ -68,6 +68,6 @@ class User extends BaseController
             'id_alumni' => $idAlumni,
         ]);
 
-        return redirect('/');
+        return redirect()->to('/');
     }
 }
