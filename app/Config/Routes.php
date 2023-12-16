@@ -18,6 +18,7 @@ $routes->get('/admin', 'Auth::auth', ['filter' => 'role:admin']);
 $routes->get('/admin/users', 'Admin::users', ['filter' => 'role:admin']);
 $routes->post('/admin/users/update', 'Admin::update', ['filter' => 'role:admin']);
 $routes->get('/admin/approval', 'Admin::approval', ['filter' => 'role:admin']);
+$routes->post('/admin/approval/update', 'Admin::approvalUpdate', ['filter' => 'role:admin']);
 
 $routes->get('/user/form', 'User::form', ['filter' => 'role:user']);
 $routes->post('/user/save', 'User::save', ['filter' => 'role:user']);

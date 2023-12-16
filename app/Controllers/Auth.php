@@ -35,6 +35,7 @@ class Auth extends BaseController
             "breadcrumb" => 'Dashboard',
             "status" => $status,
             "alumni" => $alumni,
+            "isRejected" => $this->alumniModel->isRejected(),
             "countAdmin" => $this->userModel->countRoleAdmin(),
         ];
 
@@ -44,6 +45,7 @@ class Auth extends BaseController
                 "breadcrumb" => 'Form',
                 "status" => $status,
                 "alumni" => $alumni,
+                "isRejected" => $this->alumniModel->isRejected(),
             ];
 
             if (!$alumni || !$status) {

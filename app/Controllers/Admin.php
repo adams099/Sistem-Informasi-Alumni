@@ -42,7 +42,6 @@ class Admin extends BaseController
         $this->userModel->update($id, ['status_message' => 'updated']);
         $this->alumniModel->where('user_id', $userId)->delete();
 
-
         return redirect()->to('/admin/users');
     }
 
@@ -52,7 +51,25 @@ class Admin extends BaseController
             "currentRoute" => 'Approval',
             "breadcrumb" => 'Approval',
             "approval" => $this->approvModel->getAllApprov(),
+            "status" => [['description' => 'Need Approve'], ['description' => 'Approved'], ['description' => 'Rejected']]
         ];
         return view('admin/approval', $data);
+    }
+
+    public function approvalUpdate()
+    {
+        $apprv_id = $this->request->getPost('apprv_id');
+        $user_id = $this->request->getPost('user_id');
+        $status = $this->request->getPost('approval');
+
+        $data =  [
+            'status' => $status,
+            'approved_by' => user()->email,
+        ];
+
+        $this->approvModel->update($apprv_id, $data);
+        $this->alumniModel->where('user_id', $user_id)->update(null, ['status' => $status]);
+
+        return redirect()->to('/admin/approval');
     }
 }

@@ -329,6 +329,30 @@
         </script>
     <?php endif; ?>
 
+    <?php if ($breadcrumb == 'Approval') : ?>
+        <script>
+            $(document).ready(function() {
+                // get Edit Product
+                $('.btn-edit').on('click', function() {
+                    // get data from button edit
+                    const id = $(this).data('id');
+                    const status = $(this).data('status');
+                    const user_id = $(this).data('user_id');
+                    // Set data to Form Edit
+                    $('.apprv_id').val(id);
+                    $('.user_id').val(user_id);
+                    $('.approval').val(status).trigger('change');
+                    // Call Modal Edit
+                    $('#editModal').modal('show');
+                });
+
+                $('.close-modal').on('click', function() {
+                    $('#editModal').modal('hide');
+                });
+            });
+        </script>
+    <?php endif; ?>
+
 </body>
 
 </html>

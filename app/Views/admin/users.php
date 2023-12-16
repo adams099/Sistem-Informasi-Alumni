@@ -64,7 +64,7 @@
     </div>
 </div>
 
-<!-- Modal Edit Product-->
+<!-- Modal Edit Role-->
 <form action="/admin/users/update" method="post">
     <?= csrf_field(); ?>
 

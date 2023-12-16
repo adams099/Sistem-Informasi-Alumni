@@ -14,11 +14,12 @@ class ApprovalModel extends Model
         'req_by',
         'id_user',
         'id_alumni',
+        'approved_by',
     ];
 
     public function getAllApprov()
     {
-        $this->select('nama, approved_by, req_by, approval.created_at, approval.updated_at, approval.status');
+        $this->select('approval.id, user_id, nama, approved_by, req_by, approval.created_at, approval.updated_at, approval.status');
         $this->join('alumni', 'alumni.id = approval.id_alumni');
         $query = $this->get()->getResult();
 

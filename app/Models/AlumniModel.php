@@ -45,6 +45,14 @@ class AlumniModel extends Model
         return ($result !== null);
     }
 
+    public function isRejected()
+    {
+        $data = ['status' => 'Rejected', 'user_id' => user_id()];
+        $result = $this->where($data)->get()->getRow();
+
+        return ($result !== null);
+    }
+
     public function countAlumniApproved()
     {
         $builder = $this;

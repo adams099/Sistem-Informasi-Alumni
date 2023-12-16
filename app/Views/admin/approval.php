@@ -52,13 +52,15 @@
                                         <td class="align-middle text-center text-sm">
                                             <?php if ($key->status == 'Approved') : ?>
                                                 <span class="badge badge-sm bg-gradient-success">Approved</span>
+                                            <?php elseif ($key->status == 'Rejected') : ?>
+                                                <span class="badge badge-sm bg-gradient-danger">Rejected</span>
                                             <?php else : ?>
                                                 <span class="badge badge-sm bg-gradient-secondary">Need Approve</span>
                                             <?php endif; ?>
 
                                         </td>
                                         <td class="align-middle">
-                                            <a href="#" class="text-secondary font-weight-bold text-xs">
+                                            <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $key->id; ?>" data-status="<?= $key->status; ?>" data-user_id="<?= $key->user_id; ?>">
                                                 Edit
                                             </a>
                                         </td>
@@ -72,4 +74,37 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Edit Approval-->
+<form action="/admin/approval/update" method="post">
+    <?= csrf_field(); ?>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Approval Update</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select name="approval" class="form-control approval">
+                            <option disabled>-Select-</option>
+                            <?php foreach ($status as $row) : ?>
+                                <option value="<?= $row['description']; ?>"><?= $row['description']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="apprv_id" class="apprv_id">
+                    <input type="hidden" name="user_id" class="user_id">
+                    <button type="button" class="btn btn-secondary close-modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 <?= $this->endSection('content'); ?>
