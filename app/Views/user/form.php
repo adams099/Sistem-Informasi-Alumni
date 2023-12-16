@@ -3,19 +3,9 @@
 <?= $this->section('content'); ?>
 <div class="container-fluid py-4">
     <?php if ($isRejected) : ?>
-        <div class="alert alert-danger mb-5 mt-3" role="alert">
-            <h4 class="alert-heading text-white">Rejected</h4>
-            <p class="text-white">Pengajuan biodata anda ditolak</p>
-            <hr>
-            <p class="text-white">Hubungi admin untuk informasi lebih lanju.</p>
-        </div>
+        <?= $this->include('/layout/component/alertCardUser'); ?>
     <?php elseif (!$status && $alumni) : ?>
-        <div class="alert alert-success mb-5 mt-3" role="alert">
-            <h4 class="alert-heading text-white">On Progress</h4>
-            <p class="text-white">Data sedang ditinjau</p>
-            <hr>
-            <p class="text-white">Hubungi admin untuk mempercepat peninjauan</p>
-        </div>
+        <?= $this->include('/layout/component/alertCardUser'); ?>
     <?php else : ?>
         <div class="row d-flex">
             <div class="container mt-2">
