@@ -24,7 +24,7 @@
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 
     <!-- <link id="pagestyle" href="<?= base_url(); ?>../assets/css/bootstrap.css" rel="stylesheet" /> -->
-    <?php if ($breadcrumb == 'Form') : ?>
+    <?php if ($breadcrumb == 'Form' || $breadcrumb == 'Alumni') : ?>
         <link href="<?= base_url(); ?>../assets/css/form.css" rel="stylesheet" />
     <?php endif; ?>
 </head>
@@ -305,6 +305,10 @@
 
     <?php if ($breadcrumb == 'Form') : ?>
         <script type="text/javascript" src="<?= base_url('../assets/js/form.js'); ?>"></script>
+    <?php endif; ?>
+
+    <?php if ($breadcrumb == 'Alumni') : ?>
+        <script type="text/javascript" src="<?= base_url('../assets/js/detail-alumni.js'); ?>"></script>
     <?php endif; ?>
 
     <?php if ($breadcrumb == 'Users') : ?>

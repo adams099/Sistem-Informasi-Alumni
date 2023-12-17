@@ -72,4 +72,12 @@ class Admin extends BaseController
 
         return redirect()->to('/admin/approval');
     }
+
+    public function deleteAlumni()
+    {
+        $userId = $this->request->getVar('user_id');
+        $this->alumniModel->where('user_id', $userId)->delete();
+
+        return redirect()->to('/alumni');
+    }
 }

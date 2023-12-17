@@ -20,7 +20,7 @@ class User extends BaseController
         $data = [
             "currentRoute" => 'List of Alumni',
             "breadcrumb" => 'Alumni',
-            "alumniData" => $this->alumniModel->findAll(),
+            "alumniData" => $this->alumniModel->getAlumni(),
             "status" => $this->status,
             "alumni" => $this->alumni,
         ];

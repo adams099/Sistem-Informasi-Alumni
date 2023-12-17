@@ -112,40 +112,39 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- page 3 -->
-                    <div class="row setup-content" id="step-3">
-                        <div class="col-xs-6 col-md-offset-3">
-                            <div class="col-md-12">
-                                <h3 class="mb-4"> Profession</h3>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="control-label">Perkerjaan</label>
-                                        <input name="perkerjaan" type="text" class="form-control" placeholder="Perkerjaan">
+                        <!-- page 3 -->
+                        <div class="row setup-content" id="step-3">
+                            <div class="col-xs-6 col-md-offset-3">
+                                <div class="col-md-12">
+                                    <h3 class="mb-4"> Profession</h3>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Pekerjaan</label>
+                                            <input name="perkerjaan" type="text" class="form-control" placeholder="Pekerjaan">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Posisi</label>
+                                            <input name="posisi_pekerjaan" type="text" class="form-control" placeholder="Posisi atau Jabatan">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="control-label">Posisi</label>
-                                        <input name="posisi_pekerjaan" type="text" class="form-control" placeholder="Posisi atau Jabatan">
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Pencapaian Karir</label>
+                                            <textarea name="pencapaian_karir" class="form-control" placeholder="Pencapaian Karir"></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="control-label">Pencapaian Karir</label>
-                                        <textarea name="pencapaian_karir" class="form-control" placeholder="Pencapaian Karir"></textarea>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn bg-gradient-primary prevBtn btn-lg pull-left" type="button">Previous</button>
+                                        <button class="btn bg-gradient-success btn-lg pull-right" type="submit">Submit</button>
                                     </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn bg-gradient-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                                    <button class="btn bg-gradient-success btn-lg pull-right" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </form>
             </div>
-            </form>
+        <?php endif; ?>
         </div>
-    <?php endif; ?>
-</div>
 </div>
 <?= $this->endSection('content'); ?>

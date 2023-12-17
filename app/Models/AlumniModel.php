@@ -27,6 +27,16 @@ class AlumniModel extends Model
         'ipk',
     ];
 
+    public function getAlumni()
+    {
+        $builder = $this;
+        $builder->select('users.id, email, telepon, nama, tanggal_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
+        $builder->join('users', 'alumni.user_id = users.id');
+        $query = $builder->get()->getResult();
+
+        return $query;
+    }
+
     public function findAlumni()
     {
         $useridStatus = ['user_id' => user_id()];
