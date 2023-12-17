@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Auth::auth');
 $routes->get('/alumni', 'User::index');
+$routes->get('/profile', 'User::profile');
 
 $routes->add('Admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->add('User', 'User::index', ['filter' => 'role:user']);

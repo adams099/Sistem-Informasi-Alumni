@@ -27,6 +27,15 @@ class User extends BaseController
         return view('user/alumni', $data);
     }
 
+    public function profile()
+    {
+        $data = [
+            "currentRoute" => 'Profile',
+            "breadcrumb" => 'Profile',
+        ];
+        return view('user/profile', $data);
+    }
+
     public function form()
     {
         $data = [

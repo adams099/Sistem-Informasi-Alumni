@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url(); ?>../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="<?= base_url(); ?>../assets/img/favicon.png">
     <title>
-        Soft UI Dashboard by Creative Tim
+        Sistem Informasi Alumni
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -46,13 +46,13 @@
     </main>
 
     <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+        <!-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="fa fa-cog py-2"> </i>
-        </a>
+        </a> -->
         <div class="card shadow-lg ">
             <div class="card-header pb-0 pt-3 ">
                 <div class="float-start">
-                    <h5 class="mt-3 mb-0">Soft UI Configurator</h5>
+                    <h5 class="mt-3 mb-0">Sistem Informasi Alumni Configurator</h5>
                     <p>See our dashboard options.</p>
                 </div>
                 <div class="float-end mt-4">
@@ -95,7 +95,7 @@
                 <div class="form-check form-switch ps-0">
                     <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
                 </div>
-                <hr class="horizontal dark my-sm-4">
+                <!-- <hr class="horizontal dark my-sm-4">
                 <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard">Free Download</a>
                 <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard">View documentation</a>
                 <div class="w-100 text-center">
@@ -107,7 +107,7 @@
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/soft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
                         <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
