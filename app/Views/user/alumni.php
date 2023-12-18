@@ -19,7 +19,7 @@
                                         <?php endif; ?>
                                         <p class="mb-0 mt-0"><?= $key->perkerjaan; ?></p>
                                         <p class="mb-5 mt-1">Tahun Lulus : <b><?= $key->tahun_lulus; ?></b></p>
-                                        <a class="btn-edit text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="#" data-user_id="<?= $key->id; ?>" data-email="<?= $key->email; ?>" data-telepon="<?= $key->telepon; ?>" data-nama="<?= $key->nama; ?>" data-tanggal_lahir="<?= $key->tanggal_lahir; ?>" data-nim="<?= $key->nim; ?>" data-tahun_lulus="<?= $key->tahun_lulus; ?>" data-prodi="<?= $key->prodi; ?>" data-ipk="<?= $key->ipk; ?>" data-angkatan="<?= $key->angkatan; ?>" data-pendidikan="<?= $key->pendidikan; ?>" data-prestasi="<?= $key->prestasi; ?>" data-perkerjaan="<?= $key->perkerjaan; ?>" data-posisi_pekerjaan="<?= $key->posisi_pekerjaan; ?>" data-pencapaian_karir="<?= $key->pencapaian_karir; ?>">
+                                        <a class="btn-edit text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="#" data-user_id="<?= $key->id; ?>" data-email="<?= $key->email; ?>" data-telepon="<?= $key->telepon; ?>" data-nama="<?= $key->nama; ?>" data-tanggal_lahir="<?= $key->tanggal_lahir; ?>" data-nim="<?= $key->nim; ?>" data-tahun_lulus="<?= $key->tahun_lulus; ?>" data-prodi="<?= $key->prodi; ?>" data-ipk="<?= $key->ipk; ?>" data-angkatan="<?= $key->angkatan; ?>" data-pendidikan="<?= $key->pendidikan; ?>" data-prestasi="<?= $key->prestasi; ?>" data-perkerjaan="<?= $key->perkerjaan; ?>" data-posisi_pekerjaan="<?= $key->posisi_pekerjaan; ?>" data-pencapaian_karir="<?= $key->pencapaian_karir; ?>" data-user_image="<?= $key->user_image; ?>">
                                             Read More
                                             <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                                         </a>
@@ -28,9 +28,9 @@
                                 <div class="col-lg-4 ms-auto text-center mt-5 mt-lg-0">
                                     <div class="bg-gradient-primary border-radius-lg h-100">
                                         <img src="<?= base_url(); ?>../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                                        <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                                            <img class="w-100 position-relative z-index-2 pt-4" src="<?= base_url(); ?>../assets/img/illustrations/rocket-white.png" alt="rocket">
-                                        </div>
+                                        <img class="w-90 position-relative z-index-2 pt-4" src="<?= base_url(); ?>../assets/img/user_image/<?= $key->user_image; ?>" alt="rocket">
+                                        <!-- <div class="position-relative d-flex align-items-center justify-content-center h-100">
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -73,13 +73,8 @@
                                 <div class="col-md-12">
                                     <div class="d-flex">
                                         <div class="col">
-                                            <div class="form-group col-md-11">
-                                                <div class="bg-gradient-primary border-radius-lg h-100">
-                                                    <img src="<?= base_url(); ?>../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                                                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                                                        <img class="w-100 position-relative z-index-2 pt-4" src="<?= base_url(); ?>../assets/img/illustrations/rocket-white.png" alt="rocket">
-                                                    </div>
-                                                </div>
+                                            <div class="form-group col-md-12">
+                                                <img class="border-radius-lg w-65 user_image mx-3" src="<?= base_url(); ?>" alt="rocket">
                                             </div>
                                         </div>
                                         <div class="col">

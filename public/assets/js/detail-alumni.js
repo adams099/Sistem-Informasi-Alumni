@@ -36,6 +36,10 @@ $(document).ready(function() {
         const posisi_pekerjaan = $(this).data('posisi_pekerjaan');
         const pencapaian_karir = $(this).data('pencapaian_karir');
         
+        const user_image = $(this).data('user_image');
+        const currentSrc = '../assets/img/user_image/';
+        const newSrc = currentSrc + user_image;
+        
         // Set data to Form Edit
         $('.user_id').val(user_id);
         $('.email').val(email);
@@ -52,6 +56,8 @@ $(document).ready(function() {
         $('.perkerjaan').val(perkerjaan);
         $('.posisi_pekerjaan').val(posisi_pekerjaan);
         $('.pencapaian_karir').val(pencapaian_karir);
+        $('.user_image').attr('src', newSrc);
+
         // Call Modal Edit
         $('#editModal').modal('show');
     });

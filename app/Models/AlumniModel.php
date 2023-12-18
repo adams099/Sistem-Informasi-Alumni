@@ -30,8 +30,11 @@ class AlumniModel extends Model
     public function getAlumni()
     {
         $builder = $this;
-        $builder->select('users.id, email, telepon, nama, tanggal_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
+        $builder->select('users.id, users.user_image, email, telepon, nama, tanggal_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
         $builder->join('users', 'alumni.user_id = users.id');
+        if (in_groups('user')) {
+            $builder->where('alumni.status', 'Approved');
+        }
         $query = $builder->get()->getResult();
 
         return $query;

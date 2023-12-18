@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <form role="form" action="/user/save" method="post">
+                <form role="form" action="/user/save" method="post" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
 
                     <!-- page1 -->
@@ -48,16 +48,20 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label class="control-label">Tanggal Lahir</label>
-                                            <input name="tanggal_lahir" type="date" required class="form-control" placeholder="Tanggal Lahir">
-                                        </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4">
                                             <label class="control-label">Tempat Lahir</label>
                                             <input name="tempat_lahir" type="text" required class="form-control" placeholder="Tempat Lahir">
                                         </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Tanggal Lahir</label>
+                                            <input name="tanggal_lahir" type="date" required class="form-control" placeholder="Tanggal Lahir">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Foto</label>
+                                            <input name="user_image" type="file" class="form-control" placeholder="Foto Formal">
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify-content-end">
+                                    <div class="d-flex justify-content-end mt-5">
                                         <button class="btn bg-gradient-primary nextBtn btn-lg pull-right" type="button">Next</button>
                                     </div>
                                 </div>
@@ -106,7 +110,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between mt-5">
                                     <button class="btn bg-gradient-primary prevBtn btn-lg pull-left" type="button">Previous</button>
                                     <button class="btn bg-gradient-primary nextBtn btn-lg pull-right" type="button">Next</button>
                                 </div>
@@ -134,7 +138,7 @@
                                             <textarea name="pencapaian_karir" class="form-control" placeholder="Pencapaian Karir"></textarea>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between mt-5">
                                         <button class="btn bg-gradient-primary prevBtn btn-lg pull-left" type="button">Previous</button>
                                         <button class="btn bg-gradient-success btn-lg pull-right" type="submit">Submit</button>
                                     </div>

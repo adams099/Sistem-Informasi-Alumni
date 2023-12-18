@@ -59,11 +59,13 @@
                                             <?php endif; ?>
 
                                         </td>
-                                        <td class="align-middle">
-                                            <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $key->id; ?>" data-status="<?= $key->status; ?>" data-user_id="<?= $key->user_id; ?>">
-                                                Edit
-                                            </a>
-                                        </td>
+                                        <?php if ($key->status == 'Need Approve') : ?>
+                                            <td class="align-middle">
+                                                <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $key->id; ?>" data-status="<?= $key->status; ?>" data-user_id="<?= $key->user_id; ?>">
+                                                    Edit
+                                                </a>
+                                            </td>
+                                        <?php endif; ?>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AlumniModel;
 use App\Models\ApprovalModel;
+use App\Models\UserModel;
 
 class User extends BaseController
 {
@@ -11,6 +12,8 @@ class User extends BaseController
     {
         $this->alumniModel = new AlumniModel();
         $this->approvModel = new ApprovalModel();
+        $this->userModel = new UserModel();
+
         $this->status = $this->alumniModel->findStatus();
         $this->alumni = $this->alumniModel->findAlumni();
     }
@@ -49,6 +52,22 @@ class User extends BaseController
 
     public function save()
     {
+        $foto = $this->request->getFile('user_image');
+        $ext = $foto->getClientExtension();
+        $extValid = ['jpg', 'jpeg', 'png', 'PNG', 'JPG', 'JPEG'];
+
+
+        $namaFoto = 'image_' . strval(user_id()) . '.' . $ext;
+        if (in_array($ext, $extValid)) {
+
+            if (!$foto->hasMoved()) {
+                $foto->move('assets/img/user_image', $namaFoto);
+                $dataUser = ['user_image' => $namaFoto];
+                $this->userModel->update(user_id(), $dataUser);
+            }
+        }
+
+
         $this->alumniModel->save([
             'nama' => $this->request->getPost('nama'),
             'tempat_lahir' => $this->request->getPost('tempat_lahir'),

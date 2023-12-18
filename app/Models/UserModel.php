@@ -10,6 +10,7 @@ class UserModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = [
         'status_message',
+        'user_image',
     ];
 
     public function getUsers()
