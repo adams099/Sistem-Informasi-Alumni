@@ -15,6 +15,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- Dumping structure for table ci4.alumni
+DROP TABLE IF EXISTS `alumni`;
 CREATE TABLE IF NOT EXISTS `alumni` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nama` varchar(100) DEFAULT NULL,
@@ -38,14 +39,15 @@ CREATE TABLE IF NOT EXISTS `alumni` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Dumping data for table ci4.alumni: ~1 rows (approximately)
 DELETE FROM `alumni`;
 INSERT INTO `alumni` (`id`, `nama`, `tempat_lahir`, `tanggal_lahir`, `telepon`, `nim`, `prodi`, `tahun_lulus`, `angkatan`, `perkerjaan`, `posisi_pekerjaan`, `created_at`, `updated_at`, `user_id`, `status`, `pendidikan`, `prestasi`, `pencapaian_karir`, `ipk`) VALUES
-	(39, 'Doloremque non nesci', 'Ab quam aspernatur a', '2016-05-13', '60', '23', 'Adipisci enim numqua', 18, 59, 'Delectus ipsum con', 'Voluptatem corrupti', '2023-12-16 10:38:53', '2023-12-16 17:10:01', 5, 'Need Approve', 'Quos omnis quam itaq', 'Quo beatae velit re', 'Aperiam veniam aute', '61');
+	(49, 'Adam MA', 'Tangerang', '2023-12-18', '0812999999', '999999999', 'Informatika AbalAbal', 2999, 99, 'Tidur Sambil Salto', '', '2023-12-18 13:48:10', '2023-12-18 14:34:46', 5, 'Approved', 'D99 Poltek GT', '', '', '3.9');
 
 -- Dumping structure for table ci4.approval
+DROP TABLE IF EXISTS `approval`;
 CREATE TABLE IF NOT EXISTS `approval` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `status` varchar(50) DEFAULT NULL,
@@ -60,14 +62,15 @@ CREATE TABLE IF NOT EXISTS `approval` (
   KEY `id_alumni` (`id_alumni`),
   CONSTRAINT `id_alumni` FOREIGN KEY (`id_alumni`) REFERENCES `alumni` (`id`) ON DELETE CASCADE,
   CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Dumping data for table ci4.approval: ~1 rows (approximately)
 DELETE FROM `approval`;
 INSERT INTO `approval` (`id`, `status`, `req_by`, `approved_by`, `created_at`, `updated_at`, `id_user`, `id_alumni`) VALUES
-	(24, 'Need Approve', 'user@gmail.com', 'admin@gmail.com', '2023-12-16 10:38:53', '2023-12-16 17:10:01', 5, 39);
+	(34, 'Approved', 'user@gmail.com', 'admin@gmail.com', '2023-12-18 13:48:10', '2023-12-18 14:34:46', 5, 49);
 
 -- Dumping structure for table ci4.auth_activation_attempts
+DROP TABLE IF EXISTS `auth_activation_attempts`;
 CREATE TABLE IF NOT EXISTS `auth_activation_attempts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(255) NOT NULL,
@@ -81,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `auth_activation_attempts` (
 DELETE FROM `auth_activation_attempts`;
 
 -- Dumping structure for table ci4.auth_groups
+DROP TABLE IF EXISTS `auth_groups`;
 CREATE TABLE IF NOT EXISTS `auth_groups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -95,6 +99,7 @@ INSERT INTO `auth_groups` (`id`, `name`, `description`) VALUES
 	(2, 'user', 'General User');
 
 -- Dumping structure for table ci4.auth_groups_permissions
+DROP TABLE IF EXISTS `auth_groups_permissions`;
 CREATE TABLE IF NOT EXISTS `auth_groups_permissions` (
   `group_id` int(11) unsigned NOT NULL DEFAULT 0,
   `permission_id` int(11) unsigned NOT NULL DEFAULT 0,
@@ -108,6 +113,7 @@ CREATE TABLE IF NOT EXISTS `auth_groups_permissions` (
 DELETE FROM `auth_groups_permissions`;
 
 -- Dumping structure for table ci4.auth_groups_users
+DROP TABLE IF EXISTS `auth_groups_users`;
 CREATE TABLE IF NOT EXISTS `auth_groups_users` (
   `group_id` int(11) unsigned NOT NULL DEFAULT 0,
   `user_id` int(11) unsigned NOT NULL DEFAULT 0,
@@ -124,6 +130,7 @@ INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 	(2, 5);
 
 -- Dumping structure for table ci4.auth_logins
+DROP TABLE IF EXISTS `auth_logins`;
 CREATE TABLE IF NOT EXISTS `auth_logins` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(255) DEFAULT NULL,
@@ -134,9 +141,9 @@ CREATE TABLE IF NOT EXISTS `auth_logins` (
   PRIMARY KEY (`id`),
   KEY `email` (`email`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table ci4.auth_logins: ~97 rows (approximately)
+-- Dumping data for table ci4.auth_logins: ~125 rows (approximately)
 DELETE FROM `auth_logins`;
 INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `success`) VALUES
 	(1, '::1', 'admin@admin.com', 1, '2023-12-10 05:50:51', 1),
@@ -235,9 +242,38 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 	(94, '::1', 'user@gmail.com', 5, '2023-12-16 17:05:12', 1),
 	(95, '::1', 'admin@gmail.com', 4, '2023-12-16 17:05:39', 1),
 	(96, '::1', 'user@gmail.com', 5, '2023-12-16 17:06:20', 1),
-	(97, '::1', 'admin@gmail.com', 4, '2023-12-16 17:09:41', 1);
+	(97, '::1', 'admin@gmail.com', 4, '2023-12-16 17:09:41', 1),
+	(98, '::1', 'admin@gmail.com', 4, '2023-12-17 01:51:58', 1),
+	(99, '::1', 'admin@gmail.com', 4, '2023-12-17 03:47:22', 1),
+	(100, '::1', 'admin@gmail.com', 4, '2023-12-17 10:16:33', 1),
+	(101, '::1', 'user@gmail.com', 5, '2023-12-17 12:33:44', 1),
+	(102, '::1', 'admin@gmail.com', 4, '2023-12-17 12:33:54', 1),
+	(103, '::1', 'user@gmail.com', 5, '2023-12-17 12:34:31', 1),
+	(104, '::1', 'admin@gmail.com', 4, '2023-12-17 12:34:58', 1),
+	(105, '::1', 'admin@gmail.com', 4, '2023-12-17 13:30:17', 1),
+	(106, '::1', 'user@gmail.com', 5, '2023-12-17 13:36:49', 1),
+	(107, '::1', 'admin@gmail.com', 4, '2023-12-17 13:40:27', 1),
+	(108, '::1', 'user@gmail.com', 5, '2023-12-17 13:40:48', 1),
+	(109, '::1', 'user@gmail.com', 5, '2023-12-18 12:13:24', 1),
+	(110, '::1', 'admin@gmail.com', 4, '2023-12-18 12:13:41', 1),
+	(111, '::1', 'user@gmail.com', 5, '2023-12-18 12:14:04', 1),
+	(112, '::1', 'admin@gmail.com', 4, '2023-12-18 12:55:54', 1),
+	(113, '::1', 'user@gmail.com', 5, '2023-12-18 12:56:17', 1),
+	(114, '::1', 'admin', NULL, '2023-12-18 13:08:00', 0),
+	(115, '::1', 'admin@gmail.com', 4, '2023-12-18 13:08:07', 1),
+	(116, '::1', 'user@gmail.com', 5, '2023-12-18 13:08:28', 1),
+	(117, '::1', 'admin@gmail.com', 4, '2023-12-18 13:18:52', 1),
+	(118, '::1', 'user@gmail.com', 5, '2023-12-18 13:40:12', 1),
+	(119, '::1', 'admin@gmail.com', 4, '2023-12-18 13:43:13', 1),
+	(120, '::1', 'user@gmail.com', 5, '2023-12-18 13:45:48', 1),
+	(121, '::1', 'admin@gmail.com', 4, '2023-12-18 13:46:26', 1),
+	(122, '::1', 'user@gmail.com', 5, '2023-12-18 13:46:42', 1),
+	(123, '::1', 'admin@gmail.com', 4, '2023-12-18 13:48:29', 1),
+	(124, '::1', 'user@gmail.com', 5, '2023-12-18 14:23:10', 1),
+	(125, '::1', 'admin@gmail.com', 4, '2023-12-18 14:26:51', 1);
 
 -- Dumping structure for table ci4.auth_permissions
+DROP TABLE IF EXISTS `auth_permissions`;
 CREATE TABLE IF NOT EXISTS `auth_permissions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -249,6 +285,7 @@ CREATE TABLE IF NOT EXISTS `auth_permissions` (
 DELETE FROM `auth_permissions`;
 
 -- Dumping structure for table ci4.auth_reset_attempts
+DROP TABLE IF EXISTS `auth_reset_attempts`;
 CREATE TABLE IF NOT EXISTS `auth_reset_attempts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -263,6 +300,7 @@ CREATE TABLE IF NOT EXISTS `auth_reset_attempts` (
 DELETE FROM `auth_reset_attempts`;
 
 -- Dumping structure for table ci4.auth_tokens
+DROP TABLE IF EXISTS `auth_tokens`;
 CREATE TABLE IF NOT EXISTS `auth_tokens` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `selector` varchar(255) NOT NULL,
@@ -279,6 +317,7 @@ CREATE TABLE IF NOT EXISTS `auth_tokens` (
 DELETE FROM `auth_tokens`;
 
 -- Dumping structure for table ci4.auth_users_permissions
+DROP TABLE IF EXISTS `auth_users_permissions`;
 CREATE TABLE IF NOT EXISTS `auth_users_permissions` (
   `user_id` int(11) unsigned NOT NULL DEFAULT 0,
   `permission_id` int(11) unsigned NOT NULL DEFAULT 0,
@@ -292,6 +331,7 @@ CREATE TABLE IF NOT EXISTS `auth_users_permissions` (
 DELETE FROM `auth_users_permissions`;
 
 -- Dumping structure for table ci4.migrations
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `version` varchar(255) NOT NULL,
@@ -309,6 +349,7 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 	(1, '2017-11-20-223112', 'Myth\\Auth\\Database\\Migrations\\CreateAuthTables', 'default', 'Myth\\Auth', 1702186522, 1);
 
 -- Dumping structure for table ci4.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -335,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 DELETE FROM `users`;
 INSERT INTO `users` (`id`, `email`, `user_image`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(4, 'admin@gmail.com', 'default.jpg', 'admin', '$2y$10$5jSQIdHN/UOycffAIZdFAOigPijqIHu/qNFiuciA7NJ71W2/h1ElW', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2023-12-10 14:07:10', '2023-12-10 14:07:10', NULL),
-	(5, 'user@gmail.com', 'default.jpg', 'user', '$2y$10$VR5dqDhjrTyZ8zocFurPDOcGouietnrX8nGkec8qrpn1AE2..qbGK', NULL, NULL, NULL, NULL, NULL, 'updated', 1, 0, '2023-12-10 14:08:10', '2023-12-16 06:01:52', NULL);
+	(5, 'user@gmail.com', 'image_5.PNG', 'user', '$2y$10$VR5dqDhjrTyZ8zocFurPDOcGouietnrX8nGkec8qrpn1AE2..qbGK', NULL, NULL, NULL, NULL, NULL, 'updated', 1, 0, '2023-12-10 14:08:10', '2023-12-18 13:48:10', NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
