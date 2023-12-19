@@ -5,10 +5,16 @@
 
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                <!-- <div class="input-group">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Type here...">
-                </div> -->
+                <?php if ($breadcrumb == 'Alumni') : ?>
+                    <form action="/alumni" method="get">
+                        <div class="input-group">
+                            <a href="javascript:void(0);" onclick="document.getElementById('searchForm').submit();" class="input-group-text text-body">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </a>
+                            <input type="search" value="<?= isset($search) ? $search : '' ?>" name="search" class="form-control" placeholder="Type here for search">
+                        </div>
+                    </form>
+                <?php endif; ?>
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">

@@ -27,15 +27,27 @@ class AlumniModel extends Model
         'ipk',
     ];
 
-    public function getAlumni()
+    public function getAlumni($keyword = null)
     {
+
         $builder = $this;
         $builder->select('users.id, users.user_image, email, telepon, nama, tanggal_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
         $builder->join('users', 'alumni.user_id = users.id');
+
+        if ($keyword) {
+            $builder->like('email', $keyword)
+                ->orLike('nama', $keyword)
+                ->orLike('nim', $keyword)
+                ->orLike('prodi', $keyword)
+                ->orLike('angkatan', $keyword)
+                ->orLike('tahun_lulus', $keyword);
+        }
+
         if (in_groups('user')) {
             $builder->where('alumni.status', 'Approved');
         }
-        $query = $builder->get()->getResult();
+
+        $query = $builder->paginate(4, 'alumni');
 
         return $query;
     }

@@ -20,13 +20,18 @@ class User extends BaseController
 
     public function index()
     {
+        $keyword = $this->request->getVar('search');
+
         $data = [
             "currentRoute" => 'List of Alumni',
             "breadcrumb" => 'Alumni',
-            "alumniData" => $this->alumniModel->getAlumni(),
+            "alumniData" => $this->alumniModel->getAlumni($keyword),
+            "pager" => $this->alumniModel->pager,
+            "search" => $keyword,
             "status" => $this->status,
             "alumni" => $this->alumni,
         ];
+
         return view('user/alumni', $data);
     }
 
