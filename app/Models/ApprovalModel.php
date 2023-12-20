@@ -17,11 +17,18 @@ class ApprovalModel extends Model
         'approved_by',
     ];
 
-    public function getAllApprov()
+    public function getAllApprov($keyword = null)
     {
         $this->select('approval.id, user_id, nama, approved_by, req_by, approval.created_at, approval.updated_at, approval.status');
         $this->join('alumni', 'alumni.id = approval.id_alumni');
-        $query = $this->get()->getResult();
+
+        if ($keyword) {
+            $this->like('nama', $keyword)
+                ->orLike('approved_by', $keyword)
+                ->orLike('approval.status', $keyword);
+        }
+
+        $query = $this->paginate(5, 'approval');
 
         return $query;
     }

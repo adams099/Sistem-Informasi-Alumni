@@ -21,10 +21,14 @@ class Admin extends BaseController
 
     public function users()
     {
+        $keyword = $this->request->getVar('search');
+
         $data = [
             "currentRoute" => 'List of User',
             "breadcrumb" => 'Users',
-            'userData' => $this->userModel->getUsers(),
+            'userData' => $this->userModel->getUsers($keyword),
+            "pager" => $this->userModel->pager,
+            "search" => $keyword,
             'group' => $this->groupsModel->getRole(),
         ];
         return view('admin/users', $data);
@@ -47,10 +51,14 @@ class Admin extends BaseController
 
     public function approval()
     {
+        $keyword = $this->request->getVar('search');
+
         $data = [
             "currentRoute" => 'Approval',
             "breadcrumb" => 'Approval',
-            "approval" => $this->approvModel->getAllApprov(),
+            "approval" => $this->approvModel->getAllApprov($keyword),
+            "pager" => $this->approvModel->pager,
+            "search" => $keyword,
             "status" => [['description' => 'Need Approve'], ['description' => 'Approved'], ['description' => 'Rejected']]
         ];
         return view('admin/approval', $data);

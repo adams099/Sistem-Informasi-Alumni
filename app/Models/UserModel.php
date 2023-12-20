@@ -13,12 +13,20 @@ class UserModel extends Model
         'user_image',
     ];
 
-    public function getUsers()
+    public function getUsers($keyword = null)
     {
         $builder = $this;
-        $builder->select('users.id, group_id as role, email, username, created_at, updated_at, user_image');
+        $builder->select('users.id, group_id as role, auth_groups.name, email, username, created_at, updated_at, user_image');
         $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
-        $query = $builder->get()->getResult();
+        $builder->join('auth_groups', 'auth_groups_users.group_id = auth_groups.id');
+
+        if ($keyword) {
+            $builder->like('auth_groups.name', $keyword)
+                ->orLike('email', $keyword)
+                ->orLike('username', $keyword);
+        }
+
+        $query = $builder->paginate(5, 'user');
 
         return $query;
     }

@@ -1,11 +1,11 @@
 <?= $this->extend('./layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="mt-5"></div>
-<!-- print_r($approval); -->
-
 <div class="container-fluid py-4">
     <div class="row">
+        <div class="d-flex justify-content-center">
+            <?= $pager->links('approval', 'custom_pager') ?>
+        </div>
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
@@ -31,37 +31,37 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"><?= $key->nama; ?></h6>
-                                                    <p class="text-xs text-secondary mb-0"><?= $key->req_by; ?></p>
+                                                    <h6 class="mb-0 text-sm"><?= $key['nama']; ?></h6>
+                                                    <p class="text-xs text-secondary mb-0"><?= $key['req_by']; ?></p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?= $key->approved_by; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $key['approved_by']; ?></p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?= $key->created_at; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $key['created_at']; ?></p>
                                             <!-- <p class="text-xs text-secondary mb-0">Organization</p> -->
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?= $key->updated_at; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $key['updated_at']; ?></p>
                                         </td>
                                         <!-- <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">ini center</span>
                                         </td> -->
                                         <td class="align-middle text-center text-sm">
-                                            <?php if ($key->status == 'Approved') : ?>
+                                            <?php if ($key['status'] == 'Approved') : ?>
                                                 <span class="badge badge-sm bg-gradient-success">Approved</span>
-                                            <?php elseif ($key->status == 'Rejected') : ?>
+                                            <?php elseif ($key['status'] == 'Rejected') : ?>
                                                 <span class="badge badge-sm bg-gradient-danger">Rejected</span>
                                             <?php else : ?>
                                                 <span class="badge badge-sm bg-gradient-secondary">Need Approve</span>
                                             <?php endif; ?>
 
                                         </td>
-                                        <?php if ($key->status == 'Need Approve') : ?>
+                                        <?php if ($key['status'] == 'Need Approve') : ?>
                                             <td class="align-middle">
-                                                <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $key->id; ?>" data-status="<?= $key->status; ?>" data-user_id="<?= $key->user_id; ?>">
+                                                <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $key['id']; ?>" data-status="<?= $key['status']; ?>" data-user_id="<?= $key['user_id']; ?>">
                                                     Edit
                                                 </a>
                                             </td>

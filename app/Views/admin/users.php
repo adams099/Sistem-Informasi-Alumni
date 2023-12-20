@@ -3,6 +3,9 @@
 <?= $this->section('content'); ?>
 <div class="container-fluid py-4">
     <div class="row">
+        <div class="d-flex justify-content-center">
+            <?= $pager->links('user', 'custom_pager') ?>
+        </div>
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
@@ -29,27 +32,27 @@
                                                     <img src="<?= base_url(); ?>../assets/img/user_image/default.jpg" class="avatar avatar-sm me-3" alt="imageUser">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"><?= $users->username; ?></h6>
-                                                    <p class="text-xs text-secondary mb-0"><?= $users->email; ?></p>
+                                                    <h6 class="mb-0 text-sm"><?= $users['username']; ?></h6>
+                                                    <p class="text-xs text-secondary mb-0"><?= $users['email']; ?></p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?= $users->created_at; ?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $users['created_at']; ?></p>
                                             <!-- <p class="text-xs text-secondary mb-0">Organization</p> -->
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold"><?= $users->updated_at; ?></span>
+                                            <span class="text-secondary text-xs font-weight-bold"><?= $users['updated_at']; ?></span>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <?php if ($users->role == 1) : ?>
+                                            <?php if ($users['role'] == 1) : ?>
                                                 <span class="badge badge-sm bg-gradient-success">Admin</span>
                                             <?php else : ?>
                                                 <span class="badge badge-sm bg-gradient-secondary">User</span>
                                             <?php endif; ?>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $users->id; ?>" data-group_id="<?= $users->role; ?>">
+                                            <a href="#" class="btn-edit text-secondary font-weight-bold text-xs" data-id="<?= $users['id']; ?>" data-group_id="<?= $users['role']; ?>">
                                                 Edit
                                             </a>
                                         </td>

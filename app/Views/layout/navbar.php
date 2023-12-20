@@ -5,8 +5,18 @@
 
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                <?php if ($breadcrumb == 'Alumni') : ?>
-                    <form action="/alumni" method="get">
+                <?php if ($breadcrumb == 'Alumni' || $breadcrumb == 'Users' || $breadcrumb == 'Approval') : ?>
+                    <?php
+                    if ($breadcrumb == 'Alumni') {
+                        $_action = '/alumni';
+                    } elseif ($breadcrumb == 'Users') {
+                        $_action = '/admin/users';
+                    } else {
+                        $_action = '/admin/approval';
+                    }
+
+                    ?>
+                    <form action="<?= $_action; ?>" method="get">
                         <div class="input-group">
                             <a href="javascript:void(0);" onclick="document.getElementById('searchForm').submit();" class="input-group-text text-body">
                                 <i class="fas fa-search" aria-hidden="true"></i>
