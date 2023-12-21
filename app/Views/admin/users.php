@@ -47,8 +47,10 @@
                                         <td class="align-middle text-center text-sm">
                                             <?php if ($users['role'] == 1) : ?>
                                                 <span class="badge badge-sm bg-gradient-success">Admin</span>
+                                            <?php elseif ($users['role'] == 2) : ?>
+                                                <span class="badge badge-sm bg-gradient-primary">Alumni</span>
                                             <?php else : ?>
-                                                <span class="badge badge-sm bg-gradient-secondary">User</span>
+                                                <span class="badge badge-sm bg-gradient-secondary">Mahasiswa</span>
                                             <?php endif; ?>
                                         </td>
                                         <td class="align-middle">
