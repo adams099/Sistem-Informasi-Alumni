@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <?php
-            if (in_groups('admin')) {
+            if (!in_groups('user')) {
                 $alumni = true;
                 $status = true;
             }

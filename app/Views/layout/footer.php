@@ -7,7 +7,7 @@
                         document.write(new Date().getFullYear())
                     </script>,
                     made with <i class="fa fa-heart"></i> by
-                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Galih | Mega</a>
+                    <a href="#" class="font-weight-bold" target="_blank">Galih | Mega</a>
                 </div>
             </div>
             <div class="col-lg-6">

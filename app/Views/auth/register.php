@@ -43,9 +43,9 @@
                     <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                         <div class="card z-index-0">
                             <div class="card-header text-center pt-4">
-                                <h5>Register with</h5>
+                                <h5>Register as</h5>
                             </div>
-                            <div class="row px-xl-5 px-sm-4 px-3">
+                            <!-- <div class="row px-xl-5 px-sm-4 px-3">
                                 <div class="col-3 ms-auto px-1">
                                     <a class="btn btn-outline-light w-100" href="#">
                                         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink32">
@@ -88,12 +88,22 @@
                                         or
                                     </p>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="card-body">
                                 <?= view('Myth\Auth\Views\_message_block') ?>
                                 <form action="<?= url_to('register') ?>" method="post" role="form text-left">
                                     <?= csrf_field() ?>
 
+                                    <div class="mb-3 d-flex justify-content-around">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="typeUser" id="inlineRadio1" value="user" required checked>
+                                            <label class="form-check-label" for="inlineRadio1">Alumni</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="typeUser" id="inlineRadio2" value="guests">
+                                            <label class="form-check-label" for="inlineRadio2">Mahasiswa</label>
+                                        </div>
+                                    </div>
                                     <div class="mb-3">
                                         <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
                                     </div>

@@ -23,7 +23,7 @@ $(document).ready(function() {
         const user_id = $(this).data('user_id');
         const email = $(this).data('email');
         const telepon = $(this).data('telepon');
-        const nama = $(this).data('user_id');
+        const nama = $(this).data('nama');
         const tanggal_lahir = $(this).data('tanggal_lahir');
         const nim = $(this).data('nim');
         const tahun_lulus = $(this).data('tahun_lulus');

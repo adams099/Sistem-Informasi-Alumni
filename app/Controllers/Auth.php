@@ -39,7 +39,7 @@ class Auth extends BaseController
             "countAdmin" => $this->userModel->countRoleAdmin(),
         ];
 
-        if (in_groups('user')) {
+        if (!in_groups('admin')) {
             $datas = [
                 "currentRoute" => 'Biodata',
                 "breadcrumb" => 'Form',
@@ -48,9 +48,12 @@ class Auth extends BaseController
                 "isRejected" => $this->alumniModel->isRejected(),
             ];
 
-            if (!$alumni || !$status) {
-                return view('user/form', $datas);
+            if (in_groups('user')) {
+                if (!$alumni || !$status) {
+                    return view('user/form', $datas);
+                }
             }
+
             $data += [
                 "countAlumni" => $this->alumniModel->countAlumniApproved(),
                 "countCumlaude" => $this->alumniModel->countCumlaude(),
