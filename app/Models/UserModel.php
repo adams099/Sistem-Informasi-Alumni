@@ -19,11 +19,11 @@ class UserModel extends Model
         $builder = $this;
 
         if (in_groups('user')) {
-            $builder->select('users.id, username, users.user_image, email, telepon, nama, tanggal_lahir, tempat_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
+            $builder->select('alamat, penempatan, username, users.user_image, email, telepon, nama, tanggal_lahir, tempat_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
             $builder->join('alumni', 'alumni.user_id = users.id');
             $builder->where('users.id', $userId);
         } else {
-            $builder->select('users.id, username, users.user_image, email, group_id as role');
+            $builder->select('username, users.user_image, email, group_id as role');
             $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
             $builder->where('users.id', $userId);
         }

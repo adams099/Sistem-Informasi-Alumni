@@ -44,7 +44,7 @@
                     <div class="nav-wrapper position-relative end-0">
                         <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
                             <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile">
-                                <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
+                                <a class="btn-edit nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#" role="tab" aria-selected="false" data-email="<?= $profileData->email; ?>" data-telepon="<?= $profileData->telepon; ?>" data-nama="<?= $profileData->nama; ?>" data-tanggal_lahir="<?= $profileData->tanggal_lahir; ?>" data-nim="<?= $profileData->nim; ?>" data-tahun_lulus="<?= $profileData->tahun_lulus; ?>" data-prodi="<?= $profileData->prodi; ?>" data-ipk="<?= $profileData->ipk; ?>" data-angkatan="<?= $profileData->angkatan; ?>" data-pendidikan="<?= $profileData->pendidikan; ?>" data-prestasi="<?= $profileData->prestasi; ?>" data-perkerjaan="<?= $profileData->perkerjaan; ?>" data-posisi_pekerjaan="<?= $profileData->posisi_pekerjaan; ?>" data-pencapaian_karir="<?= $profileData->pencapaian_karir; ?>" data-user_image="<?= $profileData->user_image; ?>" data-alamat="<?= $profileData->alamat; ?>" data-penempatan="<?= $profileData->penempatan; ?>">
                                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <title>settings</title>
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -135,4 +135,163 @@
         </div>
     </div>
 </div>
+
+<form role="form" action="/user/update" method="post" enctype="multipart/form-data">
+    <?= csrf_field(); ?>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-header d-flex justify-content-center mt-1">
+                    <div class="stepwizard col-md-offset-2">
+                        <div class="stepwizard-row setup-panel">
+                            <div class="stepwizard-step px-3">
+                                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                                <p style="margin-bottom: 0;">Personal</p>
+                            </div>
+                            <div class="stepwizard-step px-3">
+                                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                                <p style="margin-bottom: 0;">Education</p>
+                            </div>
+                            <div class="stepwizard-step px-3">
+                                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                                <p style="margin-bottom: 0;">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-body mt-0">
+                    <!-- page1 -->
+                    <div class="form-row">
+                        <div class="row setup-content" id="step-1">
+                            <div class="col-xs-6 col-md-offset-3">
+                                <div class="col-md-12">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <div class="form-group col-md-12">
+                                                <img class="border-radius-lg w-65 user_image mx-3" src="<?= base_url(); ?>" alt="rocket" id="selectedImage">
+                                                <input name="user_image" type="file" id="inputImage" style="display: none;" accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group col-md-12">
+                                                <label class="control-label">Email</label>
+                                                <input required disabled type="text" class="email form-control">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="control-label">Telepon</label>
+                                                <input name="telepon" placeholder="No Telepon" required type="number" class="telepon form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Nama</label>
+                                            <input name="nama" required type="text" class="nama form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-5">
+                                            <label class="control-label">Tanggal Lahir</label>
+                                            <input name="tanggal_lahir" required type="date" class="tanggal_lahir form-control">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">NIM</label>
+                                            <input name="nim" required type="text" class="nim form-control">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label class="control-label">Lulusan Tahun</label>
+                                            <input name="tahun_lulus" required type="text" class="tahun_lulus form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Alamat</label>
+                                            <textarea name="alamat" class="alamat form-control" value="ini alamat gw coy" placeholder="Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung."></textarea>
+                                            <p class="text-sm">
+                                                <i>
+                                                    * Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung
+                                                </i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- page 2 -->
+                        <div class="row setup-content" id="step-2">
+                            <div class="col-xs-6 col-md-offset-3">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Program Studi</label>
+                                            <input name="prodi" required type="text" class="prodi form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">IPK</label>
+                                            <input name="ipk" required type="text" step="any" class="ipk form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Angkatan</label>
+                                            <input name="angkatan" required type="number" class="angkatan form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Pendidikan Terakhir</label>
+                                            <input name="pendidikan" required type="text" class="pendidikan form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Prestasi</label>
+                                            <textarea name="prestasi" class="prestasi form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- page 3 -->
+                        <div class="row setup-content" id="step-3">
+                            <div class="col-xs-6 col-md-offset-3">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Pekerjaan</label>
+                                            <input name="perkerjaan" type="text" class="perkerjaan form-control" placeholder="Perkerjaan">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Posisi</label>
+                                            <input name="posisi_pekerjaan" type="text" class="posisi_pekerjaan form-control" placeholder="Posisi atau Jabatan">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Penempatan</label>
+                                            <textarea name="penempatan" class="penempatan form-control" placeholder="Penempatan Pekerjaan"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Pencapaian Karir</label>
+                                            <textarea name="pencapaian_karir" class="pencapaian_karir form-control" placeholder="Pencapaian Karir"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-secondary close-modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 <?= $this->endSection('content'); ?>

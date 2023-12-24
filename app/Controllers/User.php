@@ -106,4 +106,51 @@ class User extends BaseController
 
         return redirect()->to('/');
     }
+
+    public function update()
+    {
+        $foto = $this->request->getFile('user_image');
+        $ext = $foto->getClientExtension();
+        $extValid = ['jpg', 'jpeg', 'png', 'PNG', 'JPG', 'JPEG'];
+
+
+        $namaFoto = 'image_' . strval(user_id()) . '.' . $ext;
+        if (in_array($ext, $extValid)) {
+
+            $path = 'assets/img/user_image/';
+            $pathnName = $path . $namaFoto;
+
+            if (file_exists($pathnName)) {
+                unlink($pathnName);
+            }
+
+            if (!$foto->hasMoved()) {
+                $foto->move($path, $namaFoto);
+                $dataUser = ['user_image' => $namaFoto];
+                $this->userModel->update(user_id(), $dataUser);
+            }
+        }
+
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'telepon' => $this->request->getPost('telepon'),
+            'nim' => $this->request->getPost('nim'),
+            'prodi' => $this->request->getPost('prodi'),
+            'tahun_lulus' => $this->request->getPost('tahun_lulus'),
+            'angkatan' => $this->request->getPost('angkatan'),
+            'perkerjaan' => $this->request->getPost('perkerjaan'),
+            'posisi_pekerjaan' => $this->request->getPost('posisi_pekerjaan'),
+            'pendidikan' => $this->request->getPost('pendidikan'),
+            'prestasi' => $this->request->getPost('prestasi'),
+            'pencapaian_karir' => $this->request->getPost('pencapaian_karir'),
+            'ipk' => $this->request->getPost('ipk'),
+            'alamat' => $this->request->getPost('alamat'),
+            'penempatan' => $this->request->getPost('penempatan'),
+        ];
+
+        $this->alumniModel->where('user_id', user_id())->update(null, $data);
+
+        return redirect()->to('/profile');
+    }
 }

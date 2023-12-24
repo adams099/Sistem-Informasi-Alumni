@@ -59,7 +59,7 @@ $(document).ready(function() {
         $('.posisi_pekerjaan').val(posisi_pekerjaan);
         $('.pencapaian_karir').val(pencapaian_karir);
         $('.alamat').val(alamat);
-        $('.penempatan').val(pencapaian_karir);
+        $('.penempatan').val(penempatan);
         $('.user_image').attr('src', newSrc);
 
         // Call Modal Edit
@@ -69,4 +69,31 @@ $(document).ready(function() {
     $('.close-modal').on('click', function() {
         $('#editModal').modal('hide');
     });
+});
+
+// Mendapatkan elemen input file dan elemen gambar
+const inputImage = document.getElementById('inputImage');
+const selectedImage = document.getElementById('selectedImage');
+
+// Menambahkan event listener untuk perubahan pada input file
+inputImage.addEventListener('change', function () {
+    // Memastikan bahwa ada file yang dipilih
+    if (this.files && this.files[0]) {
+        const reader = new FileReader();
+
+        // Membaca file sebagai URL data
+        reader.onload = function (e) {
+            // Menetapkan sumber gambar dengan URL data
+            selectedImage.src = e.target.result;
+        };
+
+        // Membaca file gambar sebagai URL data
+        reader.readAsDataURL(this.files[0]);
+    }
+});
+
+// Menambahkan event listener untuk klik pada gambar
+selectedImage.addEventListener('click', function () {
+    // Memicu klik pada input file ketika gambar diklik
+    inputImage.click();
 });

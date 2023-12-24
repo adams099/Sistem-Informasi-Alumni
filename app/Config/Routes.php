@@ -27,3 +27,4 @@ $routes->post('/alumni/delete', 'Admin::deleteAlumni', ['filter' => 'role:admin'
 // user route
 $routes->get('/user/form', 'User::form', ['filter' => 'role:user']);
 $routes->post('/user/save', 'User::save', ['filter' => 'role:user']);
+$routes->post('/user/update', 'User::update', ['filter' => 'role:user']);
