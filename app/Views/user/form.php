@@ -61,6 +61,12 @@
                                             <input name="user_image" type="file" class="form-control" placeholder="Foto Formal">
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Alamat</label>
+                                            <textarea name="alamat" class="form-control" placeholder="Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung."></textarea>
+                                        </div>
+                                    </div>
                                     <div class="d-flex justify-content-end mt-5">
                                         <button class="btn bg-gradient-primary nextBtn btn-lg pull-right" type="button">Next</button>
                                     </div>
@@ -130,6 +136,12 @@
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Posisi</label>
                                             <input name="posisi_pekerjaan" type="text" class="form-control" placeholder="Posisi atau Jabatan">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Penempatan</label>
+                                            <textarea name="penempatan" class="form-control" placeholder="Penempatan Pekerjaan"></textarea>
                                         </div>
                                     </div>
                                     <div class="row">

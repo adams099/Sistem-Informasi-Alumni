@@ -35,6 +35,8 @@ $(document).ready(function() {
         const perkerjaan = $(this).data('perkerjaan');
         const posisi_pekerjaan = $(this).data('posisi_pekerjaan');
         const pencapaian_karir = $(this).data('pencapaian_karir');
+        const alamat = $(this).data('alamat');
+        const penempatan = $(this).data('penempatan');
         
         const user_image = $(this).data('user_image');
         const currentSrc = '../assets/img/user_image/';
@@ -56,6 +58,8 @@ $(document).ready(function() {
         $('.perkerjaan').val(perkerjaan);
         $('.posisi_pekerjaan').val(posisi_pekerjaan);
         $('.pencapaian_karir').val(pencapaian_karir);
+        $('.alamat').val(alamat);
+        $('.penempatan').val(pencapaian_karir);
         $('.user_image').attr('src', newSrc);
 
         // Call Modal Edit

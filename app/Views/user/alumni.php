@@ -22,7 +22,7 @@
                                     <?php endif; ?>
                                     <p class="mb-0 mt-0"><?= $key['perkerjaan']; ?></p>
                                     <p class="mb-5 mt-1">Tahun Lulus : <b><?= $key['tahun_lulus']; ?></b></p>
-                                    <a class="btn-edit text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="#" data-user_id="<?= $key['id']; ?>" data-email="<?= $key['email']; ?>" data-telepon="<?= $key['telepon']; ?>" data-nama="<?= $key['nama']; ?>" data-tanggal_lahir="<?= $key['tanggal_lahir']; ?>" data-nim="<?= $key['nim']; ?>" data-tahun_lulus="<?= $key['tahun_lulus']; ?>" data-prodi="<?= $key['prodi']; ?>" data-ipk="<?= $key['ipk']; ?>" data-angkatan="<?= $key['angkatan']; ?>" data-pendidikan="<?= $key['pendidikan']; ?>" data-prestasi="<?= $key['prestasi']; ?>" data-perkerjaan="<?= $key['perkerjaan']; ?>" data-posisi_pekerjaan="<?= $key['posisi_pekerjaan']; ?>" data-pencapaian_karir="<?= $key['pencapaian_karir']; ?>" data-user_image="<?= $key['user_image']; ?>">
+                                    <a class="btn-edit text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="#" data-user_id="<?= $key['id']; ?>" data-email="<?= $key['email']; ?>" data-telepon="<?= $key['telepon']; ?>" data-nama="<?= $key['nama']; ?>" data-tanggal_lahir="<?= $key['tanggal_lahir']; ?>" data-nim="<?= $key['nim']; ?>" data-tahun_lulus="<?= $key['tahun_lulus']; ?>" data-prodi="<?= $key['prodi']; ?>" data-ipk="<?= $key['ipk']; ?>" data-angkatan="<?= $key['angkatan']; ?>" data-pendidikan="<?= $key['pendidikan']; ?>" data-prestasi="<?= $key['prestasi']; ?>" data-perkerjaan="<?= $key['perkerjaan']; ?>" data-posisi_pekerjaan="<?= $key['posisi_pekerjaan']; ?>" data-pencapaian_karir="<?= $key['pencapaian_karir']; ?>" data-user_image="<?= $key['user_image']; ?>" data-alamat="<?= $key['alamat']; ?>" data-penempatan="<?= $key['penempatan']; ?>">
                                         Read More
                                         <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                                     </a>
@@ -111,6 +111,17 @@
                                             <input readonly type="text" class="tahun_lulus form-control">
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Alamat</label>
+                                            <textarea readonly name="alamat" class="alamat form-control" value="ini alamat gw coy" placeholder="Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung."></textarea>
+                                            <p class="text-sm">
+                                                <i>
+                                                    * Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung
+                                                </i>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -161,6 +172,12 @@
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Posisi</label>
                                             <input readonly type="text" class="posisi_pekerjaan form-control" placeholder="Posisi atau Jabatan">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="control-label">Penempatan</label>
+                                            <textarea readonly name="penempatan" class="penempatan form-control" placeholder="Penempatan Pekerjaan"></textarea>
                                         </div>
                                     </div>
                                     <div class="row">

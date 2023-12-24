@@ -91,6 +91,8 @@ class User extends BaseController
             'prestasi' => $this->request->getPost('prestasi'),
             'pencapaian_karir' => $this->request->getPost('pencapaian_karir'),
             'ipk' => $this->request->getPost('ipk'),
+            'alamat' => $this->request->getPost('alamat'),
+            'penempatan' => $this->request->getPost('penempatan'),
         ]);
 
         $idAlumni = $this->alumniModel->insertID();
