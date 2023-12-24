@@ -135,7 +135,7 @@
                                             <input readonly type="number" class="angkatan form-control">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="control-label">Pendidikan</label>
+                                            <label class="control-label">Pendidikan Terakhir</label>
                                             <input readonly type="text" class="pendidikan form-control">
                                         </div>
                                     </div>

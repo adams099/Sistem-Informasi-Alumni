@@ -13,10 +13,30 @@ class UserModel extends Model
         'user_image',
     ];
 
+    public function getByUserid()
+    {
+        $userId = user_id();
+        $builder = $this;
+
+        if (in_groups('user')) {
+            $builder->select('users.id, username, users.user_image, email, telepon, nama, tanggal_lahir, tempat_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
+            $builder->join('alumni', 'alumni.user_id = users.id');
+            $builder->where('users.id', $userId);
+        } else {
+            $builder->select('users.id, username, users.user_image, email, group_id as role');
+            $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+            $builder->where('users.id', $userId);
+        }
+
+        $query = $builder->get()->getRow();
+
+        return $query;
+    }
+
     public function getUsers($keyword = null)
     {
         $builder = $this;
-        $builder->select('users.id, group_id as role, auth_groups.name, email, username, created_at, updated_at, user_image');
+        $builder->select('users.id, user_image, group_id as role, auth_groups.name, email, username, created_at, updated_at, user_image');
         $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $builder->join('auth_groups', 'auth_groups_users.group_id = auth_groups.id');
 

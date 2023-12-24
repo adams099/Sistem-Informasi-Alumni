@@ -29,7 +29,7 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div>
-                                                    <img src="<?= base_url(); ?>../assets/img/user_image/default.jpg" class="avatar avatar-sm me-3" alt="imageUser">
+                                                    <img src="<?= base_url(); ?>../assets/img/user_image/<?= $users['user_image']; ?>" class="avatar avatar-sm me-3" alt="imageUser">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm"><?= $users['username']; ?></h6>

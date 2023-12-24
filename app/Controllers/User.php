@@ -40,6 +40,7 @@ class User extends BaseController
         $data = [
             "currentRoute" => 'Profile',
             "breadcrumb" => 'Profile',
+            "profileData" => $this->userModel->getByUserid(),
         ];
         return view('user/profile', $data);
     }

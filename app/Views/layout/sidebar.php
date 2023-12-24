@@ -10,6 +10,11 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <?php
+            if (in_groups('user') && !isset($alumni) && !isset($status)) {
+                $alumni = true;
+                $status = true;
+            }
+
             if (!in_groups('user')) {
                 $alumni = true;
                 $status = true;
