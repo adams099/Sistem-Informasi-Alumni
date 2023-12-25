@@ -189,7 +189,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label class="control-label">Nama</label>
-                                            <input name="nama" required type="text" class="nama form-control">
+                                            <input name="nama" required type="text" class="nama form-control" placeholder="Nama Lengkap">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -199,11 +199,11 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="control-label">NIM</label>
-                                            <input name="nim" required type="text" class="nim form-control">
+                                            <input placeholder="NIM" name="nim" required type="text" class="nim form-control">
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label class="control-label">Lulusan Tahun</label>
-                                            <input name="tahun_lulus" required type="text" class="tahun_lulus form-control">
+                                            <input placeholder="Tahun Lulus" name="tahun_lulus" required type="text" class="tahun_lulus form-control">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -228,27 +228,27 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Program Studi</label>
-                                            <input name="prodi" required type="text" class="prodi form-control">
+                                            <input placeholder="Program Studi" name="prodi" required type="text" class="prodi form-control">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="control-label">IPK</label>
-                                            <input name="ipk" required type="text" step="any" class="ipk form-control">
+                                            <input placeholder="IPK" name="ipk" required type="number" step="any" class="ipk form-control">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Angkatan</label>
-                                            <input name="angkatan" required type="number" class="angkatan form-control">
+                                            <input placeholder="Angkatan berapa" name="angkatan" required type="number" class="angkatan form-control">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Pendidikan Terakhir</label>
-                                            <input name="pendidikan" required type="text" class="pendidikan form-control">
+                                            <input placeholder="Pendidikan Terakhir" name="pendidikan" required type="text" class="pendidikan form-control">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label class="control-label">Prestasi</label>
-                                            <textarea name="prestasi" class="prestasi form-control"></textarea>
+                                            <textarea placeholder="Prestasi" name="prestasi" class="prestasi form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>
