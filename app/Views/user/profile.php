@@ -32,7 +32,7 @@
                             if ($profileData->role == 1) {
                                 echo 'Administrator';
                             } else {
-                                echo 'Alumni';
+                                echo 'Mahasiswa';
                             }
                             ?>
                         </p>
@@ -209,7 +209,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label class="control-label">Alamat</label>
-                                            <textarea name="alamat" class="alamat form-control" value="ini alamat gw coy" placeholder="Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung."></textarea>
+                                            <textarea name="alamat" class="alamat form-control" placeholder="Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung."></textarea>
                                             <p class="text-sm">
                                                 <i>
                                                     * Alamat ini bertujuan untuk para mahasiswa yang ingin berkonsultasi secara langsung

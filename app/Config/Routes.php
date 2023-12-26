@@ -11,6 +11,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Auth::auth');
 $routes->get('/alumni', 'User::index');
 $routes->get('/profile', 'User::profile');
+$routes->get('/feedback', 'User::feedback');
 
 $routes->add('Admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->add('User', 'User::index', ['filter' => 'role:user']);
@@ -28,3 +29,4 @@ $routes->post('/alumni/delete', 'Admin::deleteAlumni', ['filter' => 'role:admin'
 $routes->get('/user/form', 'User::form', ['filter' => 'role:user']);
 $routes->post('/user/save', 'User::save', ['filter' => 'role:user']);
 $routes->post('/user/update', 'User::update', ['filter' => 'role:user']);
+$routes->post('/user/feedback-save', 'User::feedbackSave', ['filter' => 'role:user']);

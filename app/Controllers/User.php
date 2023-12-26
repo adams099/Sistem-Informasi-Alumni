@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AlumniModel;
 use App\Models\ApprovalModel;
+use App\Models\SaranModel;
 use App\Models\UserModel;
 
 class User extends BaseController
@@ -13,6 +14,7 @@ class User extends BaseController
         $this->alumniModel = new AlumniModel();
         $this->approvModel = new ApprovalModel();
         $this->userModel = new UserModel();
+        $this->saranModel = new SaranModel();
 
         $this->status = $this->alumniModel->findStatus();
         $this->alumni = $this->alumniModel->findAlumni();
@@ -54,6 +56,22 @@ class User extends BaseController
             "alumni" => $this->alumni,
         ];
         return view('user/form', $data);
+    }
+
+    public function feedback()
+    {
+        if (in_groups('admin')) {
+            $query = $this->saranModel->get()->getResult();
+        } else {
+            $query = $this->saranModel->where('user_id', user_id())->get()->getResult();
+        }
+
+        $data = [
+            "currentRoute" => 'Feedback',
+            "breadcrumb" => 'Feedback',
+            "feedbackData" => $query,
+        ];
+        return view('user/feedback', $data);
     }
 
     public function save()
@@ -152,5 +170,17 @@ class User extends BaseController
         $this->alumniModel->where('user_id', user_id())->update(null, $data);
 
         return redirect()->to('/profile');
+    }
+
+    public function feedbackSave()
+    {
+        $this->saranModel->save([
+            'from' => $this->request->getPost('from'),
+            'judul' => $this->request->getPost('judul'),
+            'saran' => $this->request->getPost('saran'),
+            'user_id' => user_id(),
+        ]);
+
+        return redirect()->to('/feedback');
     }
 }

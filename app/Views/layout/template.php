@@ -357,6 +357,26 @@
         </script>
     <?php endif; ?>
 
+    <?php if ($breadcrumb == 'Feedback') : ?>
+        <script>
+            $(document).ready(function() {
+                // get Edit Product
+                $('.btn-edit').on('click', function() {
+                    // get data from button edit
+                    // const id = $(this).data('id');
+                    // Set data to Form Edit
+                    // $('.apprv_id').val(id);
+                    // Call Modal Edit
+                    $('#editModal').modal('show');
+                });
+
+                $('.close-modal').on('click', function() {
+                    $('#editModal').modal('hide');
+                });
+            });
+        </script>
+    <?php endif; ?>
+
 </body>
 
 </html>
