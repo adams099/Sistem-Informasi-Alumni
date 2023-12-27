@@ -45,7 +45,7 @@ class AlumniModel extends Model
                 ->orLike('tahun_lulus', $keyword);
         }
 
-        if (in_groups('user')) {
+        if (!in_groups('admin')) {
             $builder->where('alumni.status', 'Approved');
         }
 
