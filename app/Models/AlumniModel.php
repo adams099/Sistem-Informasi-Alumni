@@ -33,7 +33,7 @@ class AlumniModel extends Model
     {
 
         $builder = $this;
-        $builder->select('users.id, alamat, penempatan, users.user_image, email, telepon, nama, tanggal_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
+        $builder->select('users.id, alamat,alumni.status , penempatan, users.user_image, email, telepon, nama, tanggal_lahir, nim, tahun_lulus, prodi, ipk, angkatan, pendidikan, prestasi, perkerjaan, posisi_pekerjaan, pencapaian_karir');
         $builder->join('users', 'alumni.user_id = users.id');
 
         if ($keyword) {
@@ -65,7 +65,7 @@ class AlumniModel extends Model
 
     public function findStatus()
     {
-        $useridStatus = ['status' => 'Approved'];
+        $useridStatus = ['status' => 'Approved', 'user_id' => user_id()];
         $result = $this->where($useridStatus)->get()->getRow();
 
 
