@@ -78,7 +78,7 @@ class User extends BaseController
             "feedbackData" => $feedbackData,
             "pager" => $this->saranModel->pager,
             "search" => $keyword,
-            "msg" => '<p>Terimakasi telah menggunakan <b>Sistem Informasi Alumni</b>  Kami!. Kami akan senang mendengar masukan anda untuk terus meningkatkan pengalaman pengguna. Mohon berikan saran atau masukan anda melalui halaman kontak atau fitur umpan balik.</p>'
+            "msg" => '<p>Terimakasi telah menggunakan <b>Sistem Informasi Alumni</b>  Kami! Kami akan senang mendengar masukan anda untuk terus meningkatkan pengalaman pengguna. Mohon berikan saran atau masukan anda melalui halaman kontak atau fitur umpan balik.</p>'
         ];
         return view('user/feedback', $data);
     }
