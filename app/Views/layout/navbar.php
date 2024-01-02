@@ -5,12 +5,20 @@
 
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                <?php if ($breadcrumb == 'Alumni' || $breadcrumb == 'Users' || $breadcrumb == 'Approval') : ?>
+                <?php
+                $isFeedbackAdmin = false;
+                if (in_groups('admin') && $breadcrumb == 'Feedback') {
+                    $isFeedbackAdmin = true;
+                }
+                ?>
+                <?php if ($breadcrumb == 'Alumni' || $breadcrumb == 'Users' || $breadcrumb == 'Approval' || $isFeedbackAdmin) : ?>
                     <?php
                     if ($breadcrumb == 'Alumni') {
                         $_action = '/alumni';
                     } elseif ($breadcrumb == 'Users') {
                         $_action = '/admin/users';
+                    } elseif ($breadcrumb == 'Feedback') {
+                        $_action = '/feedback';
                     } else {
                         $_action = '/admin/approval';
                     }

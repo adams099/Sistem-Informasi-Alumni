@@ -69,16 +69,16 @@ class User extends BaseController
 
     public function feedback()
     {
-        if (in_groups('admin')) {
-            $query = $this->saranModel->get()->getResult();
-        } else {
-            $query = $this->saranModel->where('user_id', user_id())->get()->getResult();
-        }
+        $keyword = $this->request->getVar('search');
+        $feedbackData = $this->saranModel->getFeedback($keyword);
 
         $data = [
             "currentRoute" => 'Feedback',
             "breadcrumb" => 'Feedback',
-            "feedbackData" => $query,
+            "feedbackData" => $feedbackData,
+            "pager" => $this->saranModel->pager,
+            "search" => $keyword,
+            "msg" => '<p>Terimakasi telah menggunakan <b>Sistem Informasi Alumni</b>  Kami!. Kami akan senang mendengar masukan anda untuk terus meningkatkan pengalaman pengguna. Mohon berikan saran atau masukan anda melalui halaman kontak atau fitur umpan balik.</p>'
         ];
         return view('user/feedback', $data);
     }

@@ -2,6 +2,9 @@
 
 <?= $this->section('content'); ?>
 <div class="container-fluid py-4">
+    <div class="d-flex justify-content-center">
+        <?= $pager->links('feedback', 'custom_pager') ?>
+    </div>
     <?php if (in_groups('user')) : ?>
         <div class="col-lg-3 col-md-3 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
             <div class="nav-wrapper position-relative end-0">
@@ -31,10 +34,10 @@
                             <div class="col-lg-12">
                                 <div class="d-flex flex-column" style="height: 12rem;">
                                     <?php if (in_groups('admin')) : ?>
-                                        <p class="mb-1 pt-2 text-bold">From : <?= $key->from; ?></p>
+                                        <p class="mb-1 pt-2 text-bold">From : <?= $key['from'] ?></p>
                                     <?php endif; ?>
-                                    <h5 class="font-weight-bolder"><?= $key->judul; ?></h5>
-                                    <p class="mb-5"><?= $key->saran; ?></p>
+                                    <h5 class="font-weight-bolder"><?= $key['judul'] ?></h5>
+                                    <p class="mb-5"><?= $key['saran'] ?></p>
                                     <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="#">
                                         Read More
                                         <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
@@ -92,7 +95,26 @@
                     </div>
                 </div>
             </div>
+        </div>
     </form>
+
+    <div class="modal fade" id="feedbackInfo" tabindex="-1" role="dialog" aria-labelledby="feedbackInfo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center mt-1">
+                    <button class="btn btn-primary">contoh</button>
+                </div>
+                <div class="modal-body mt-0">
+                    <?= $msg; ?>
+                </div>
+                <div class="modal-footer">
+                    <form role="form" action="/alumni/delete" method="post">
+                        <button type="button" class="btn btn-secondary close-modal-info">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?= $this->endSection('content'); ?>

@@ -360,18 +360,23 @@
     <?php if ($breadcrumb == 'Feedback') : ?>
         <script>
             $(document).ready(function() {
-                // get Edit Product
+                let hasModalBeenShown = sessionStorage.getItem('modalShown');
+
+                if (!hasModalBeenShown) {
+                    $('#feedbackInfo').modal('show');
+                    sessionStorage.setItem('modalShown', 'true');
+                }
+
                 $('.btn-edit').on('click', function() {
-                    // get data from button edit
-                    // const id = $(this).data('id');
-                    // Set data to Form Edit
-                    // $('.apprv_id').val(id);
-                    // Call Modal Edit
                     $('#editModal').modal('show');
                 });
 
                 $('.close-modal').on('click', function() {
                     $('#editModal').modal('hide');
+                });
+
+                $('.close-modal-info').on('click', function() {
+                    $('#feedbackInfo').modal('hide');
                 });
             });
         </script>
