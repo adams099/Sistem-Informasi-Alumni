@@ -25,7 +25,7 @@ class User extends BaseController
         $keyword = $this->request->getVar('search');
         $alumniData = $this->alumniModel->getAlumni($keyword);
 
-        if (!in_groups('user')) {
+        if (in_groups('admin')) {
             $dataAlumniStatus = $alumniData;
         } else {
             $dataAlumniStatus = array_filter($alumniData, function ($alumni) {

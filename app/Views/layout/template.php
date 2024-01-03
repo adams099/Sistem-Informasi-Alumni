@@ -367,6 +367,10 @@
                     sessionStorage.setItem('modalShown', 'true');
                 }
 
+                $('.btn-feedbackInfo').on('click', function() {
+                    $('#feedbackInfo').modal('show');
+                });
+
                 $('.btn-edit').on('click', function() {
                     $('#editModal').modal('show');
                 });

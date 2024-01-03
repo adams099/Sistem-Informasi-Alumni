@@ -7,8 +7,22 @@
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <?php
                 $isFeedbackAdmin = false;
+                $isProfile = false;
+
                 if (in_groups('admin') && $breadcrumb == 'Feedback') {
                     $isFeedbackAdmin = true;
+                }
+
+                if (in_groups('user') && !isset($status)) {
+                    $status = false;
+                }
+
+                if (in_groups('user')) {
+                    if ($status) {
+                        $isProfile = true;
+                    }
+                } else {
+                    $isProfile = true;
                 }
                 ?>
                 <?php if ($breadcrumb == 'Alumni' || $breadcrumb == 'Users' || $breadcrumb == 'Approval' || $isFeedbackAdmin) : ?>
@@ -35,33 +49,35 @@
                 <?php endif; ?>
             </div>
             <ul class="navbar-nav justify-content-end">
-                <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="#" class="nav-link text-body font-weight-bold px-0" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">Profile</span>
-                    </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                        <!-- <li class="mb-2"> -->
-                        <li class="">
-                            <a class="dropdown-item border-radius-md" href="<?= base_url('/profile'); ?>">
-                                <div class="d-flex py-1">
-                                    <div class="my-auto">
-                                        <img src="<?= base_url(); ?>../assets/img/user_image/<?= user()->user_image; ?>" class="avatar avatar-sm  me-3 ">
+                <?php if ($isProfile) : ?>
+                    <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                        <a href="#" class="nav-link text-body font-weight-bold px-0" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user me-sm-1"></i>
+                            <span class="d-sm-inline d-none">Profile</span>
+                        </a>
+                        <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a class="dropdown-item border-radius-md" href="<?= base_url('/profile'); ?>">
+                                    <div class="d-flex py-1">
+                                        <div class="my-auto">
+                                            <img src="<?= base_url(); ?>../assets/img/user_image/<?= user()->user_image; ?>" class="avatar avatar-sm  me-3 ">
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="text-sm font-weight-normal mb-1">
+                                                <span class="font-weight-bold"><?= user()->username; ?></span>
+                                            </h6>
+                                            <p class="text-xs text-secondary mb-0 ">
+                                                <i class="fa fa-clock me-1"></i>
+                                                <?= user()->email; ?>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="text-sm font-weight-normal mb-1">
-                                            <span class="font-weight-bold"><?= user()->username; ?></span>
-                                        </h6>
-                                        <p class="text-xs text-secondary mb-0 ">
-                                            <i class="fa fa-clock me-1"></i>
-                                            <?= user()->email; ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                         <div class="sidenav-toggler-inner">
