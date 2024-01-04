@@ -7,6 +7,7 @@ use App\Models\ApprovalModel;
 use App\Models\GroupModel;
 use App\Models\UserModel;
 use App\Models\GroupUserModel;
+use App\Models\SaranModel;
 
 class Admin extends BaseController
 {
@@ -17,6 +18,7 @@ class Admin extends BaseController
         $this->groupsModel = new GroupModel();
         $this->groupsUserModel = new GroupUserModel();
         $this->alumniModel = new AlumniModel();
+        $this->feedbackModel = new SaranModel();
     }
 
     public function users()
@@ -87,5 +89,13 @@ class Admin extends BaseController
         $this->alumniModel->where('user_id', $userId)->delete();
 
         return redirect()->to('/alumni');
+    }
+
+    public function feedbackDelete()
+    {
+        $id = $this->request->getPost('id');
+        $this->feedbackModel->where('id', $id)->delete();
+
+        return redirect()->to('/feedback');
     }
 }

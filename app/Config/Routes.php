@@ -24,6 +24,7 @@ $routes->post('/admin/users/update', 'Admin::update', ['filter' => 'role:admin']
 $routes->get('/admin/approval', 'Admin::approval', ['filter' => 'role:admin']);
 $routes->post('/admin/approval/update', 'Admin::approvalUpdate', ['filter' => 'role:admin']);
 $routes->post('/alumni/delete', 'Admin::deleteAlumni', ['filter' => 'role:admin']);
+$routes->post('/feedback/delete', 'Admin::feedbackDelete', ['filter' => 'role:admin']);
 
 // user route
 $routes->get('/user/form', 'User::form', ['filter' => 'role:user']);
