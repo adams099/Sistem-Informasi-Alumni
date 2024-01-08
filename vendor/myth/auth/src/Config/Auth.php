@@ -53,6 +53,7 @@ class Auth extends BaseConfig
         'resend-activate-account' => 'resend-activate-account',
         'forgot'                  => 'forgot',
         'reset-password'          => 'reset-password',
+        'guide-alumni-student'          => 'guide-alumni-student',
     ];
 
     /**

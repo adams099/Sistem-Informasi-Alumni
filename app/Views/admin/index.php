@@ -127,7 +127,7 @@
                         <h5 class="text-white font-weight-bolder mb-4 pt-2">Sejarah Poltek GT</h5>
                         <p class="text-white">
                             Pada 7 April 1981, PT Gajah Tunggal Group meresmikan PATIGAT sebagai respons terhadap LOLAPIL yang diinisiasi oleh Menteri Perindustrian. PATIGAT berkembang dengan membuka berbagai jurusan dan bekerjasama dengan ITB. Pada 1995, dengan izin Yayasan Bina Dharma Nurharapan Indonesia, PATIGAT berubah menjadi Politeknik Gajah Tunggal...</p>
-                        <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="#">
+                        <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="https://poltek-gt.ac.id/v2/?page_id=17" target="_blank">
                             Read More
                             <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                         </a>

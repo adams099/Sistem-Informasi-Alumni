@@ -119,7 +119,7 @@
                                     <div class="form-check form-check-info text-left">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            I agree the <a href="#" class="text-dark font-weight-bolder">Terms and Conditions</a>
+                                            I've read and understood the <a href="<?= site_url('guide-alumni-student'); ?>" class="text-dark font-weight-bolder">App Guidelines.</a>
                                         </label>
                                     </div>
                                     <div class="text-center">
