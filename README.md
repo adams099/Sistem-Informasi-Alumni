@@ -1,67 +1,51 @@
-# CodeIgniter 4 Application Starter
+# Sistem Informasi Alumni
 
-## What is CodeIgniter?
+Selamat datang di [website Sistem Informasi Alumni](https://sistem-alumni.great-site.net/)! Website ini merupakan platform sistem interaksi dan pertukaran informasi antara alumni. Tujuannya adalah memperkuat ikatan komunitas, menyediakan update terkini, dan mendukung pengembangan profesional.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Daftar Isi
+- [Gambaran Umum](#gambaran-umum)
+- [Fitur](#fitur)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Screenshot](#screenshot)
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Gambaran Umum
+Sistem Alumni adalah aplikasi berbasis web yang dibuat untuk memfasilitasi interaksi dan pertukaran informasi antara alumni dari berbagai institusi. Platform ini memungkinkan pengguna untuk mendaftar, memperbarui profil mereka, mencari alumni lain, dan berpartisipasi dalam diskusi. Tujuannya adalah memperkuat ikatan komunitas, menyediakan update terkini, dan mendukung pengembangan profesional.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Fitur
+- **Registrasi Pengguna**: Alumni dan mahasiswa dapat mendaftar dan membuat profil mereka.
+- **Manajemen Profil**: Pengguna dapat memperbarui informasi pribadi dan profesi mereka.
+- **Fungsi Pencarian**: Mudah mencari dan menemukan alumni lain berdasarkan berbagai kriteria.
+- **Dashboard Admin**: Admin dapat mengelola pengguna, postingan, dan pengaturan situs.
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Teknologi yang Digunakan
+- **Frontend**: HTML, CSS, SCSS, JavaScript
+- **Backend**: PHP
+- **Database**: MySQL
+- **Framework**: CodeIgniter 4
 
-## Installation & updates
+## Screenshot
+#### Admin Page
+ 1. Dashboard
+![halaman utama](https://github.com/user-attachments/assets/dd4b3915-d959-4fd0-9695-5ed6e78a5df1)
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+2. Users Page
+![halaman pengguna](https://github.com/user-attachments/assets/b9e6446c-4e65-4bb7-9a34-e502f1717598)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+3. Approval Page
+![halaman persetujuan](https://github.com/user-attachments/assets/8fea87fe-d807-4d4a-94c7-473af84d7cbb)
 
-## Setup
+4. Alumni Page
+![data alumni admin](https://github.com/user-attachments/assets/cc44e63e-d70a-4a91-862e-d2f2cd859053)
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+5. Feedback Page
+![umpan balik admin](https://github.com/user-attachments/assets/13183245-9aed-4934-b46e-3bc3436bcefe)
 
-## Important Change with index.php
+#### User Page
+ 1. Dashboard
+![halaman utama user](https://github.com/user-attachments/assets/f8b33530-f550-4981-8880-2c99516e139f)
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+ 2. Alumni Page
+![daftar alumni](https://github.com/user-attachments/assets/5052e68c-d657-4c48-bb43-e67f6aae2486)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> **Warning**
-> The end of life date for PHP 7.4 was November 28, 2022. If you are
-> still using PHP 7.4, you should upgrade immediately. The end of life date
-> for PHP 8.0 will be November 26, 2023.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+ 3. Feedback Page
+![umpan balik](https://github.com/user-attachments/assets/f25e46d1-b296-4906-aa84-148292d09874)
